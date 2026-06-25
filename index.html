@@ -632,6 +632,162 @@
 			.solution-feature-list .solution-row {
 				font-weight: 600;
 			}
+
+			/* --- Slide: Editing Contracts — big before/after impact view --- */
+			.impact-stage {
+				flex: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 2.5rem;
+				width: 100%;
+			}
+
+			.impact-card {
+				flex: 1;
+				max-width: 22rem;
+				border-radius: 1.1rem;
+				padding: 2.4rem 2rem;
+				box-sizing: border-box;
+				text-align: center;
+			}
+
+			.impact-old {
+				background: white;
+				border: 1px solid var(--line);
+				box-shadow: 0 8px 24px rgba(28, 42, 68, 0.05);
+			}
+
+			.impact-new {
+				background: var(--ink);
+				box-shadow: 0 16px 36px rgba(28, 42, 68, 0.18);
+			}
+
+			.impact-tag {
+				font-size: 0.72rem;
+				font-weight: 700;
+				letter-spacing: 0.14em;
+				text-transform: uppercase;
+				margin-bottom: 1.3rem;
+				display: block;
+			}
+
+			.impact-old .impact-tag { color: var(--slate); }
+			.impact-new .impact-tag { color: var(--teal); }
+
+			.impact-metric {
+				margin-bottom: 1.6rem;
+			}
+
+			.impact-number {
+				font-family: 'Fraunces', serif;
+				font-weight: 600;
+				font-size: 3.4rem;
+				line-height: 1;
+				display: block;
+			}
+
+			.impact-old .impact-number { color: var(--ink); }
+			.impact-new .impact-number { color: white; }
+
+			.impact-sub {
+				font-size: 0.95rem;
+				margin-top: 0.4rem;
+			}
+
+			.impact-old .impact-sub { color: var(--slate); }
+			.impact-new .impact-sub { color: #B9C2D6; }
+
+			.impact-arrow-col {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.6rem;
+				flex-shrink: 0;
+			}
+
+			.impact-arrow-col svg {
+				width: 40px;
+				height: 40px;
+				color: var(--gold);
+			}
+
+			.impact-multiplier {
+				font-family: 'Fraunces', serif;
+				font-weight: 600;
+				font-size: 1.7rem;
+				color: var(--gold);
+				white-space: nowrap;
+			}
+
+			.impact-multiplier-2 {
+				font-family: 'Fraunces', serif;
+				font-weight: 600;
+				font-size: 1.7rem;
+				color: var(--teal);
+				white-space: nowrap;
+			}
+
+			.impact-headline {
+				text-align: center;
+				margin-top: 1.6rem;
+				font-size: 1.15rem;
+				color: var(--ink);
+				font-weight: 600;
+			}
+
+			/* --- AI intro slide --- */
+			.ai-intro-slide {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: radial-gradient(circle at 50% 50%, #233354 0%, var(--ink) 70%);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.ai-glow {
+				position: absolute;
+				width: 50rem;
+				height: 50rem;
+				border-radius: 50%;
+				background: radial-gradient(circle, rgba(46, 156, 143, 0.35) 0%, rgba(46, 156, 143, 0) 70%);
+				animation: ai-pulse 4s ease-in-out infinite;
+			}
+
+			@keyframes ai-pulse {
+				0%, 100% { transform: scale(1); opacity: 0.7; }
+				50% { transform: scale(1.15); opacity: 1; }
+			}
+
+			.ai-big-title {
+				position: relative;
+				z-index: 1;
+				font-family: 'Fraunces', serif;
+				font-weight: 600;
+				font-size: 14rem;
+				letter-spacing: 0.02em;
+				color: white;
+				background: linear-gradient(135deg, #ffffff 0%, #9fd8d0 50%, #B8893A 100%);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				margin: 0;
+			}
+
+			.ai-subtitle {
+				position: relative;
+				z-index: 1;
+				margin-top: 1rem;
+				font-size: 1.3rem;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				color: #9fd8d0;
+				font-weight: 600;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
@@ -959,6 +1115,229 @@
 							<div class="demo-frame" data-id="demo-frame">
 								<img src="public/images/employee-profile.png" alt="Employee Profile Page">
 							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SLIDE 11: PROBLEM 3 — ORGANIZING FILES -->
+				<section data-transition="slide" data-auto-animate>
+					<div class="problem-slide">
+						<div class="problem-eyebrow">THE CHALLENGE</div>
+						<div class="title-row">
+							<h1 class="problem-title" data-id="main-title" style="margin:0;">Problem Statement:</h1>
+							<h1 class="title-detail" data-id="moving-card-title">Organizing Files</h1>
+						</div>
+
+						<div class="split-stage fragment" data-fragment-index="0">
+
+							<!-- LEFT: THE PROBLEM -->
+							<div class="split-half split-problem">
+								<div class="split-label">The Old Way</div>
+
+								<div class="icon-scatter">
+									<div class="scatter-icon icon-wa">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M5 7v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+										Hard-copy archives
+									</div>
+									<div class="scatter-icon icon-call">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="1"/><path d="M2 17h20l-1.5 4h-17z"/></svg>
+										Personal laptop copies
+									</div>
+									<div class="scatter-icon icon-wa2">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l1.5-9h11L19 13"/><rect x="5" y="13" width="14" height="6" rx="1"/><circle cx="9" cy="16" r="0.5" fill="currentColor"/></svg>
+										Flash drives
+									</div>
+									<div class="scatter-icon icon-msg">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+										Outdated versions
+									</div>
+								</div>
+							</div>
+
+							<div class="split-divider"></div>
+
+							<!-- RIGHT: THE SOLUTION -->
+							<div class="split-half split-solution">
+								<div class="split-label">With CLARA</div>
+
+								<div class="solution-card solution-feature-list">
+									<div class="solution-card-head">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+										<span>Centralized File System</span>
+									</div>
+									<div class="solution-row">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h6l2 3h10v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7z"/></svg>
+										Organized by company
+									</div>
+									<div class="solution-row">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h7l2 2h7v3H4z"/><path d="M4 9h18v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/></svg>
+										Organized by document type
+									</div>
+									<div class="solution-row">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+										Instant search across documents
+									</div>
+									<div class="solution-row">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 8-8"/></svg>
+										Always the latest version
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+				<!-- SLIDE 12: DEMO SCREENSHOT — FILE SYSTEM BY COMPANY -->
+				<section data-transition="slide" data-auto-animate>
+					<div class="problem-slide">
+						<div class="problem-eyebrow">THE CHALLENGE</div>
+						<div class="title-row">
+							<h1 class="problem-title" data-id="main-title" style="margin:0;">Problem Statement:</h1>
+							<h1 class="title-detail" data-id="moving-card-title">Organizing Files</h1>
+						</div>
+
+						<div class="demo-frame-wrap fragment" data-fragment-index="0">
+							<div class="demo-caption">Files by Company</div>
+							<div class="demo-frame" data-id="demo-frame">
+								<img src="REPLACE_WITH_SCREENSHOT_7.png" alt="Files by Company">
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SLIDE 13: DEMO SCREENSHOT — FILES BY DOCUMENT TYPE -->
+				<section data-transition="slide" data-auto-animate>
+					<div class="problem-slide">
+						<div class="problem-eyebrow">THE CHALLENGE</div>
+						<div class="title-row">
+							<h1 class="problem-title" data-id="main-title" style="margin:0;">Problem Statement:</h1>
+							<h1 class="title-detail" data-id="moving-card-title">Organizing Files</h1>
+						</div>
+
+						<div class="demo-frame-wrap">
+							<div class="demo-caption">Files by Document Type</div>
+							<div class="demo-frame" data-id="demo-frame">
+								<img src="REPLACE_WITH_SCREENSHOT_8.png" alt="Files by Document Type">
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SLIDE 14: DEMO SCREENSHOT — SEARCH -->
+				<section data-transition="slide" data-auto-animate>
+					<div class="problem-slide">
+						<div class="problem-eyebrow">THE CHALLENGE</div>
+						<div class="title-row">
+							<h1 class="problem-title" data-id="main-title" style="margin:0;">Problem Statement:</h1>
+							<h1 class="title-detail" data-id="moving-card-title">Organizing Files</h1>
+						</div>
+
+						<div class="demo-frame-wrap">
+							<div class="demo-caption">Document Search</div>
+							<div class="demo-frame" data-id="demo-frame">
+								<img src="REPLACE_WITH_SCREENSHOT_9.png" alt="Document Search">
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SLIDE 15: PROBLEM 4 — EDITING CONTRACTS (special impact view) -->
+				<!-- This is the flagship AI feature, so instead of the split-screen
+				     pattern we use a dramatic before/after stat comparison: time
+				     per contract and contracts produced per 5-hour workday. -->
+				<section data-transition="slide" data-auto-animate>
+					<div class="problem-slide">
+						<div class="problem-eyebrow">THE CHALLENGE</div>
+						<div class="title-row">
+							<h1 class="problem-title" data-id="main-title" style="margin:0;">Problem Statement:</h1>
+							<h1 class="title-detail" data-id="moving-card-title">Editing Contracts</h1>
+						</div>
+
+						<div class="impact-stage fragment" data-fragment-index="0">
+
+							<div class="impact-card impact-old">
+								<span class="impact-tag">Manual Editing</span>
+								<div class="impact-metric">
+									<span class="impact-number">45 min</span>
+									<span class="impact-sub">per contract edit</span>
+								</div>
+								<div class="impact-metric">
+									<span class="impact-number">6</span>
+									<span class="impact-sub">contracts / 5-hour workday</span>
+								</div>
+							</div>
+
+							<div class="impact-arrow-col">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+								<span class="impact-multiplier">15x faster</span>
+								<span class="impact-multiplier-2">16x output</span>
+							</div>
+
+							<div class="impact-card impact-new">
+								<span class="impact-tag">✦ With CLARA AI</span>
+								<div class="impact-metric">
+									<span class="impact-number">3 min</span>
+									<span class="impact-sub">per contract edit</span>
+								</div>
+								<div class="impact-metric">
+									<span class="impact-number">100</span>
+									<span class="impact-sub">contracts / 5-hour workday</span>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="impact-headline fragment" data-fragment-index="1">One employee. Same 5 hours. 6 contracts → 100 contracts.</div>
+					</div>
+				</section>
+
+				<!-- SLIDE 16: DEMO SCREENSHOT — AI CONTRACT EDITOR -->
+				<section data-transition="slide" data-auto-animate>
+					<div class="problem-slide">
+						<div class="problem-eyebrow">THE CHALLENGE</div>
+						<div class="title-row">
+							<h1 class="problem-title" data-id="main-title" style="margin:0;">Problem Statement:</h1>
+							<h1 class="title-detail" data-id="moving-card-title">Editing Contracts</h1>
+						</div>
+
+						<div class="demo-frame-wrap fragment" data-fragment-index="0">
+							<div class="demo-caption">AI Contract Editor</div>
+							<div class="demo-frame" data-id="demo-frame">
+								<img src="REPLACE_WITH_SCREENSHOT_10.png" alt="AI Contract Editor">
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SLIDE 17: DEMO SCREENSHOT — AI-GENERATED EDIT SUGGESTIONS -->
+				<section data-transition="slide" data-auto-animate>
+					<div class="problem-slide">
+						<div class="problem-eyebrow">THE CHALLENGE</div>
+						<div class="title-row">
+							<h1 class="problem-title" data-id="main-title" style="margin:0;">Problem Statement:</h1>
+							<h1 class="title-detail" data-id="moving-card-title">Editing Contracts</h1>
+						</div>
+
+						<div class="demo-frame-wrap">
+							<div class="demo-caption">AI Edit Suggestions</div>
+							<div class="demo-frame" data-id="demo-frame">
+								<img src="REPLACE_WITH_SCREENSHOT_11.png" alt="AI Edit Suggestions">
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SLIDE 18: AI INTRO TITLE — DRAMATIC TRANSITION -->
+				<!-- No data-auto-animate here: this is meant to feel like a hard,
+				     exciting cut into a new "act" of the presentation, not a
+				     continuation of the problem-statement layout. -->
+				<section data-transition="zoom">
+					<div class="ai-intro-slide">
+						<div class="ai-glow"></div>
+						<div style="text-align:center;">
+							<h1 class="ai-big-title">AI</h1>
+							<div class="ai-subtitle">Powering the next generation of CLARA</div>
 						</div>
 					</div>
 				</section>
