@@ -1266,6 +1266,174 @@
 }
 
 .pipeline-result .num { color: var(--gold); font-family: 'Fraunces', serif; font-size: 1.3rem; }
+
+/* --- Score Function: metrics table --- */
+.metrics-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1.2rem;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(28, 42, 68, 0.06);
+    border: 1px solid var(--line);
+}
+
+.metrics-table th {
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink);
+    padding: 0.9rem 1.4rem;
+}
+
+.metrics-table td {
+    padding: 1.1rem 1.4rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 1rem;
+    color: var(--slate);
+    vertical-align: top;
+}
+
+.metrics-table tr:last-child td { border-bottom: none; }
+
+.metrics-table .m-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--ink);
+    white-space: nowrap;
+}
+
+.metrics-table .m-method {
+    color: var(--teal);
+    font-weight: 600;
+}
+
+/* --- Weight breakdown: horizontal stacked bar + legend --- */
+.weight-bar {
+    display: flex;
+    width: 100%;
+    height: 3.2rem;
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(28, 42, 68, 0.08);
+    margin-top: 1.4rem;
+}
+
+.weight-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: white;
+}
+
+.weight-ca   { background: var(--ink); flex: 45; }
+.weight-ss   { background: var(--teal); flex: 30; }
+.weight-rl   { background: var(--gold); flex: 15; }
+.weight-es   { background: var(--slate); flex: 10; }
+
+.weight-legend {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.weight-legend .legend-item { font-size: 0.95rem; }
+
+.legend-dot.ca { background: var(--ink); }
+.legend-dot.ss { background: var(--teal); }
+.legend-dot.rl { background: var(--gold); }
+.legend-dot.es { background: var(--slate); }
+
+/* --- Final formula banner --- */
+.formula-banner {
+    margin-top: 2.2rem;
+    background: var(--ink);
+    border-radius: 1rem;
+    padding: 1.8rem 2.2rem;
+    box-shadow: 0 14px 32px rgba(28, 42, 68, 0.14);
+    text-align: center;
+}
+
+.formula-banner .formula-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.8rem;
+}
+
+.formula-banner .formula-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    color: white;
+    font-weight: 500;
+}
+
+.formula-text .coef-ca { color: #9fd8d0; }
+.formula-text .coef-ss { color: #9fd8d0; }
+.formula-text .coef-rl { color: #E2B873; }
+.formula-text .coef-es { color: #B9C2D6; }
+
+/* --- Equation cards (2x2 grid) --- */
+.equation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+    margin-top: 1rem;
+}
+
+.eq-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 0.9rem;
+    padding: 1.5rem 1.7rem;
+    box-shadow: 0 8px 22px rgba(28, 42, 68, 0.05);
+    box-sizing: border-box;
+}
+
+.eq-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin: 0 0 0.7rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.eq-title .eq-dot {
+    width: 0.6rem; height: 0.6rem; border-radius: 50%;
+}
+
+.eq-formula {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 0.6rem;
+    padding: 0.8rem 1rem;
+    margin: 0 0 0.6rem 0;
+    text-align: center;
+}
+
+.eq-note {
+    font-size: 0.85rem;
+    color: var(--slate);
+    line-height: 1.5;
+    margin: 0;
+}
 		</style>
 	</head>
 	<body>
@@ -2047,6 +2215,105 @@
         </div>
 
         <div class="pipeline-result fragment">Which one is best? We need a <span class="num">score function</span> to decide.</div>
+    </div>
+</section>
+
+<!-- SLIDE 26: SCORE FUNCTION — THE 4 METRICS -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CAT — 	SCORE FUNCTION</div>
+        <h1 class="problem-title">The Score Function</h1>
+
+        <table class="metrics-table fragment">
+            <tr>
+                <th>Metric</th>
+                <th>What It Measures</th>
+                <th>Method</th>
+            </tr>
+            <tr>
+                <td class="m-name">ROUGE-L</td>
+                <td>Text similarity</td>
+                <td><span class="m-method">rouge-score</span> (Google) — LCS-based overlap</td>
+            </tr>
+            <tr>
+                <td class="m-name">Semantic Similarity</td>
+                <td>Meaning match</td>
+                <td><span class="m-method">Qwen3-embeddings-0.6B</span>, cosine similarity</td>
+            </tr>
+            <tr>
+                <td class="m-name">Edit Similarity</td>
+                <td>Character-level match</td>
+                <td><span class="m-method">difflib SequenceMatcher</span> (Ratcliff/Obershelp)</td>
+            </tr>
+            <tr>
+                <td class="m-name">Change Accuracy</td>
+                <td>Number match</td>
+                <td><span class="m-method">Regex + digit normalizer</span> checking key numbers</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- SLIDE 27: SCORE FUNCTION — WEIGHTS + FINAL FORMULA -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CAT — SCORE FUNCTION</div>
+        <h1 class="problem-title">Weighting the Metrics</h1>
+
+        <div class="weight-bar fragment">
+            <div class="weight-seg weight-ca">45%</div>
+            <div class="weight-seg weight-ss">30%</div>
+            <div class="weight-seg weight-rl">15%</div>
+            <div class="weight-seg weight-es">10%</div>
+        </div>
+
+        <div class="weight-legend fragment">
+            <div class="legend-item"><span class="legend-dot ca"></span>Change Accuracy</div>
+            <div class="legend-item"><span class="legend-dot ss"></span>Semantic Similarity</div>
+            <div class="legend-item"><span class="legend-dot rl"></span>ROUGE-L</div>
+            <div class="legend-item"><span class="legend-dot es"></span>Edit Similarity</div>
+        </div>
+
+        <div class="formula-banner fragment">
+            <div class="formula-label">Final Score Formulation</div>
+            <div class="formula-text">
+                F = <span class="coef-ca">0.45(CA)</span> + <span class="coef-ss">0.30(SS)</span> + <span class="coef-rl">0.15(ROUGE-L)</span> + <span class="coef-es">0.10(ES)</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 28: SCORE FUNCTION — THE EQUATIONS -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CAT — SCORE FUNCTION</div>
+        <h1 class="problem-title">Metric Equations</h1>
+
+        <div class="equation-grid">
+            <div class="eq-card fragment">
+                <h3 class="eq-title"><span class="eq-dot" style="background:var(--gold);"></span>ROUGE-L</h3>
+                <div class="eq-formula">F = 2PR / (P + R)</div>
+                <p class="eq-note">P = LCS(pred, gold) / |pred| &nbsp;·&nbsp; R = LCS(pred, gold) / |gold|</p>
+            </div>
+
+            <div class="eq-card fragment">
+                <h3 class="eq-title"><span class="eq-dot" style="background:var(--teal);"></span>Semantic Similarity</h3>
+                <div class="eq-formula">sim = (e_pred · e_gold) / (‖e_pred‖ ‖e_gold‖)</div>
+                <p class="eq-note">Cosine similarity × 100, using e5-base embeddings</p>
+            </div>
+
+            <div class="eq-card fragment">
+                <h3 class="eq-title"><span class="eq-dot" style="background:var(--slate);"></span>Edit Similarity</h3>
+                <div class="eq-formula">ratio = 2M / T</div>
+                <p class="eq-note">M = matching characters, T = total characters (difflib)</p>
+            </div>
+
+            <div class="eq-card fragment">
+                <h3 class="eq-title"><span class="eq-dot" style="background:var(--ink);"></span>Change Accuracy</h3>
+                <div class="eq-formula">Recall = |Nums_pred ∩ Nums_gold| / |Nums_gold| × 100</div>
+                <p class="eq-note">Checks whether key numbers were reproduced correctly</p>
+            </div>
+        </div>
     </div>
 </section>
 
