@@ -2487,41 +2487,25 @@
                 </g>
                 <line x1="50" y1="440" x2="1780" y2="440" stroke="#1C2A44" stroke-width="2"/>
 
-                <!-- bars: baseline y=440, scale 4px per point, bar width 78, step 108 -->
-                <!-- qwen2.5_0.5_Base 56.59 -->
+                <!-- bars -->
                 <rect x="60"   y="213.64" width="78" height="226.36" rx="6" fill="#8FB3DE"/>
-                <!-- Qwen2.5-1.5-Base 60.63 -->
                 <rect x="168"  y="197.48" width="78" height="242.52" rx="6" fill="#8FB3DE"/>
-                <!-- qwen2.5_3_Base 63.12 -->
                 <rect x="276"  y="187.52" width="78" height="252.48" rx="6" fill="#8FB3DE"/>
-                <!-- qwen2.5_7_Base 69.07 -->
                 <rect x="384"  y="163.72" width="78" height="276.28" rx="6" fill="#8FB3DE"/>
-                <!-- CAT2.5_0.5B 76.73 -->
                 <rect x="492"  y="133.08" width="78" height="306.92" rx="6" fill="#2C4A7C"/>
-                <!-- CAT2.5_1.5B 78.79 -->
                 <rect x="600"  y="124.84" width="78" height="315.16" rx="6" fill="#2C4A7C"/>
-                <!-- CAT2.5_3B 80.25 -->
                 <rect x="708"  y="119.00" width="78" height="321.00" rx="6" fill="#2C4A7C"/>
-                <!-- CAT2.5_7B 86.33 -->
                 <rect x="816"  y="94.68"  width="78" height="345.32" rx="6" fill="#2C4A7C"/>
-                <!-- qwen3_0.6B_base 64.87 -->
                 <rect x="924"  y="180.52" width="78" height="259.48" rx="6" fill="#EAB088"/>
-                <!-- qwen3_1.7B_base 66.32 -->
                 <rect x="1032" y="174.72" width="78" height="265.28" rx="6" fill="#EAB088"/>
-                <!-- qwen3_4B_base 67.28 -->
                 <rect x="1140" y="170.88" width="78" height="269.12" rx="6" fill="#EAB088"/>
-                <!-- qwen3_8B_base 72.40 -->
                 <rect x="1248" y="150.40" width="78" height="289.60" rx="6" fill="#EAB088"/>
-                <!-- CAT3_0.6B 82.87 -->
                 <rect x="1356" y="108.52" width="78" height="331.48" rx="6" fill="#C2693A"/>
-                <!-- CAT3_1.7B 83.84 -->
                 <rect x="1464" y="104.64" width="78" height="335.36" rx="6" fill="#C2693A"/>
-                <!-- CAT3_4B 92.50 -->
                 <rect x="1572" y="70.00"  width="78" height="370.00" rx="6" fill="#C2693A"/>
-                <!-- CAT3_8B 93.29 -->
                 <rect x="1680" y="66.84"  width="78" height="373.16" rx="6" fill="#C2693A"/>
 
-                <!-- score labels above bars -->
+                <!-- score labels -->
                 <g font-family="Fraunces" font-size="17" font-weight="600" fill="#1C2A44" text-anchor="middle">
                     <text x="99"   y="206">56.59</text>
                     <text x="207"  y="190">60.63</text>
@@ -2541,7 +2525,7 @@
                     <text x="1719" y="60">93.29</text>
                 </g>
 
-                <!-- rotated model name labels -->
+                <!-- model name labels -->
                 <g font-family="Inter" font-size="14" fill="#5C6B86">
                     <text x="99"   y="465" text-anchor="end" transform="rotate(-40 99 465)">qwen2.5_0.5_Base</text>
                     <text x="207"  y="465" text-anchor="end" transform="rotate(-40 207 465)">Qwen2.5-1.5-Base</text>
@@ -2569,14 +2553,27 @@
             <div class="legend-item"><span class="legend-dot peach"></span>Qwen3 Base</div>
             <div class="legend-item"><span class="legend-dot darkorange"></span>CAT3</div>
         </div>
+
+        <!-- ★ NEW footnote -->
+        <p style="margin:0.5rem 0 0; font-size:1.5em; color:#5C6B86; border-top:1px solid #E6DFD0; padding-top:0.4rem;">
+            * <strong>CAT models are Qwen base models fine-tuned</strong> on domain-specific data — same architecture, improved task performance.
+        </p>
     </div>
 </section>
-
 <!-- SLIDE: QWEN3 4B 4BIT — TRAINING/EVAL LOSS -->
 <section data-transition="slide" data-auto-animate>
     <div class="chart-slide">
         <div class="problem-eyebrow">CAT3 — TRAINING DIAGNOSTICS</div>
         <h1 class="problem-title" style="margin-bottom:1rem;">Qwen3 4B 4Bit Training and Evaluation Loss</h1>
+
+        <!-- ★ NEW model selection banner -->
+        <div style="display:flex; align-items:center; gap:1rem; background:#1C2A44; border-radius:8px; padding:0.5rem 1.2rem; margin-bottom:0.75rem;">
+            <span style="background:#C2693A; color:#fff; font-weight:700; font-size:0.8em; padding:0.2rem 0.7rem; border-radius:5px; white-space:nowrap;">✓ Selected: CAT3_4B</span>
+            <span style="font-size:0.8em; color:#E6DFD0; line-height:1.5;">
+                We selected <strong style="color:#fff;">Qwen3-4B (CAT3_4B)</strong> — scoring 92.50, the highest among all 4B-class models.
+                Below is its training diagnostic: evaluation loss converges smoothly while training loss descends steadily, confirming good generalisation.
+            </span>
+        </div>
 
         <div class="chart-wrap">
             <svg viewBox="0 0 1250 760" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
@@ -2706,7 +2703,6 @@
         </div>
     </div>
 </section>
-
 
 <!-- SLIDE 29: CORE — PURPOSE -->
 <section data-transition="slide" data-auto-animate>
