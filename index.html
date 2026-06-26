@@ -2466,105 +2466,243 @@
 <section data-transition="slide" data-auto-animate>
     <div class="chart-slide">
         <div class="problem-eyebrow">CAT — MODEL SELECTION</div>
-        <h1 class="problem-title" style="margin-bottom:1rem;">Final Scores Across 15 Candidates</h1>
+        <h1 class="problem-title" style="margin-bottom:1rem;">Final Scores Across 16 Candidates</h1>
 
         <div class="chart-wrap">
-            <svg viewBox="0 0 1760 620" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+            <svg viewBox="0 0 1800 620" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
                 <!-- gridlines -->
                 <g stroke="#E6DFD0" stroke-width="1">
-                    <line x1="60" y1="40"  x2="1740" y2="40" />
-                    <line x1="60" y1="140" x2="1740" y2="140" />
-                    <line x1="60" y1="240" x2="1740" y2="240" />
-                    <line x1="60" y1="340" x2="1740" y2="340" />
-                    <line x1="60" y1="440" x2="1740" y2="440" />
+                    <line x1="50" y1="40"  x2="1780" y2="40" />
+                    <line x1="50" y1="140" x2="1780" y2="140" />
+                    <line x1="50" y1="240" x2="1780" y2="240" />
+                    <line x1="50" y1="340" x2="1780" y2="340" />
+                    <line x1="50" y1="440" x2="1780" y2="440" />
                 </g>
                 <g font-family="Inter" font-size="15" fill="#5C6B86">
-                    <text x="50" y="44"  text-anchor="end">100</text>
-                    <text x="50" y="144" text-anchor="end">75</text>
-                    <text x="50" y="244" text-anchor="end">50</text>
-                    <text x="50" y="344" text-anchor="end">25</text>
-                    <text x="50" y="444" text-anchor="end">0</text>
+                    <text x="40" y="44"  text-anchor="end">100</text>
+                    <text x="40" y="144" text-anchor="end">75</text>
+                    <text x="40" y="244" text-anchor="end">50</text>
+                    <text x="40" y="344" text-anchor="end">25</text>
+                    <text x="40" y="444" text-anchor="end">0</text>
                 </g>
-                <line x1="60" y1="440" x2="1740" y2="440" stroke="#1C2A44" stroke-width="2"/>
+                <line x1="50" y1="440" x2="1780" y2="440" stroke="#1C2A44" stroke-width="2"/>
 
-                <!-- bars: baseline y=440, scale 4px per point -->
-                <!-- qwen2.5_.5B_base 57.85 -->
-                <rect x="68"   y="208.6" width="80" height="231.4" rx="6" fill="#2C4A7C"/>
-                <!-- qwen2.5_1.5B_base 66.45 -->
-                <rect x="178"  y="174.2" width="80" height="265.8" rx="6" fill="#2C4A7C"/>
-                <!-- qwen2.5_3B_base 70.65 -->
-                <rect x="288"  y="157.4" width="80" height="282.6" rx="6" fill="#2C4A7C"/>
-                <!-- qwen2.5_.5B_4bit_CLARA 61.80 -->
-                <rect x="398"  y="192.8" width="80" height="247.2" rx="6" fill="#8FB3DE"/>
-                <!-- qwen2.5_1.5B_4bit_CLARA 69.88 -->
-                <rect x="508"  y="160.5" width="80" height="279.5" rx="6" fill="#8FB3DE"/>
-                <!-- qwen2.5_3B_4bit_CLARA 75.25 -->
-                <rect x="618"  y="139.0" width="80" height="301.0" rx="6" fill="#8FB3DE"/>
-                <!-- qwen2.5_7B_4bit_CLARA 82.53 -->
-                <rect x="728"  y="109.9" width="80" height="330.1" rx="6" fill="#8FB3DE"/>
-                <!-- qwen3_0.6B_base 47.87 -->
-                <rect x="838"  y="248.5" width="80" height="191.5" rx="6" fill="#C2693A"/>
-                <!-- qwen3_1.7B_base 68.58 -->
-                <rect x="948"  y="165.7" width="80" height="274.3" rx="6" fill="#C2693A"/>
-                <!-- qwen3_0.6B_4bit_CLARA 71.36 -->
-                <rect x="1058" y="154.6" width="80" height="285.4" rx="6" fill="#EAB088"/>
-                <!-- qwen3_1.7B_4bit_CLARA 75.56 -->
-                <rect x="1168" y="137.8" width="80" height="302.2" rx="6" fill="#EAB088"/>
-                <!-- qwen3_4B_4bit_CLARA 81.94 -->
-                <rect x="1278" y="112.2" width="80" height="327.8" rx="6" fill="#EAB088"/>
-                <!-- qwen3_8B_4bit_CLARA 80.50 -->
-                <rect x="1388" y="118.0" width="80" height="322.0" rx="6" fill="#EAB088"/>
-                <!-- qwen3.5-0.8B 79.05 -->
-                <rect x="1498" y="123.8" width="80" height="316.2" rx="6" fill="#4F9D6E"/>
-                <!-- qwen3.5-2B 81.84 -->
-                <rect x="1608" y="112.6" width="80" height="327.4" rx="6" fill="#4F9D6E"/>
+                <!-- bars: baseline y=440, scale 4px per point, bar width 78, step 108 -->
+                <!-- qwen2.5_0.5_Base 56.59 -->
+                <rect x="60"   y="213.64" width="78" height="226.36" rx="6" fill="#8FB3DE"/>
+                <!-- Qwen2.5-1.5-Base 60.63 -->
+                <rect x="168"  y="197.48" width="78" height="242.52" rx="6" fill="#8FB3DE"/>
+                <!-- qwen2.5_3_Base 63.12 -->
+                <rect x="276"  y="187.52" width="78" height="252.48" rx="6" fill="#8FB3DE"/>
+                <!-- qwen2.5_7_Base 69.07 -->
+                <rect x="384"  y="163.72" width="78" height="276.28" rx="6" fill="#8FB3DE"/>
+                <!-- CAT2.5_0.5B 76.73 -->
+                <rect x="492"  y="133.08" width="78" height="306.92" rx="6" fill="#2C4A7C"/>
+                <!-- CAT2.5_1.5B 78.79 -->
+                <rect x="600"  y="124.84" width="78" height="315.16" rx="6" fill="#2C4A7C"/>
+                <!-- CAT2.5_3B 80.25 -->
+                <rect x="708"  y="119.00" width="78" height="321.00" rx="6" fill="#2C4A7C"/>
+                <!-- CAT2.5_7B 86.33 -->
+                <rect x="816"  y="94.68"  width="78" height="345.32" rx="6" fill="#2C4A7C"/>
+                <!-- qwen3_0.6B_base 64.87 -->
+                <rect x="924"  y="180.52" width="78" height="259.48" rx="6" fill="#EAB088"/>
+                <!-- qwen3_1.7B_base 66.32 -->
+                <rect x="1032" y="174.72" width="78" height="265.28" rx="6" fill="#EAB088"/>
+                <!-- qwen3_4B_base 67.28 -->
+                <rect x="1140" y="170.88" width="78" height="269.12" rx="6" fill="#EAB088"/>
+                <!-- qwen3_8B_base 72.40 -->
+                <rect x="1248" y="150.40" width="78" height="289.60" rx="6" fill="#EAB088"/>
+                <!-- CAT3_0.6B 82.87 -->
+                <rect x="1356" y="108.52" width="78" height="331.48" rx="6" fill="#C2693A"/>
+                <!-- CAT3_1.7B 83.84 -->
+                <rect x="1464" y="104.64" width="78" height="335.36" rx="6" fill="#C2693A"/>
+                <!-- CAT3_4B 92.50 -->
+                <rect x="1572" y="70.00"  width="78" height="370.00" rx="6" fill="#C2693A"/>
+                <!-- CAT3_8B 93.29 -->
+                <rect x="1680" y="66.84"  width="78" height="373.16" rx="6" fill="#C2693A"/>
 
                 <!-- score labels above bars -->
                 <g font-family="Fraunces" font-size="17" font-weight="600" fill="#1C2A44" text-anchor="middle">
-                    <text x="108"  y="200">57.85</text>
-                    <text x="218"  y="166">66.45</text>
-                    <text x="328"  y="149">70.65</text>
-                    <text x="438"  y="185">61.80</text>
-                    <text x="548"  y="153">69.88</text>
-                    <text x="658"  y="131">75.25</text>
-                    <text x="768"  y="102">82.53</text>
-                    <text x="878"  y="241">47.87</text>
-                    <text x="988"  y="158">68.58</text>
-                    <text x="1098" y="147">71.36</text>
-                    <text x="1208" y="130">75.56</text>
-                    <text x="1318" y="105">81.94</text>
-                    <text x="1428" y="111">80.50</text>
-                    <text x="1538" y="116">79.05</text>
-                    <text x="1648" y="105">81.84</text>
+                    <text x="99"   y="206">56.59</text>
+                    <text x="207"  y="190">60.63</text>
+                    <text x="315"  y="180">63.12</text>
+                    <text x="423"  y="156">69.07</text>
+                    <text x="531"  y="125">76.73</text>
+                    <text x="639"  y="117">78.79</text>
+                    <text x="747"  y="111">80.25</text>
+                    <text x="855"  y="87">86.33</text>
+                    <text x="963"  y="173">64.87</text>
+                    <text x="1071" y="167">66.32</text>
+                    <text x="1179" y="163">67.28</text>
+                    <text x="1287" y="143">72.40</text>
+                    <text x="1395" y="101">82.87</text>
+                    <text x="1503" y="97">83.84</text>
+                    <text x="1611" y="63">92.50</text>
+                    <text x="1719" y="60">93.29</text>
                 </g>
 
                 <!-- rotated model name labels -->
                 <g font-family="Inter" font-size="14" fill="#5C6B86">
-                    <text x="108"  y="465" text-anchor="end" transform="rotate(-40 108 465)">qwen2.5_.5B_base</text>
-                    <text x="218"  y="465" text-anchor="end" transform="rotate(-40 218 465)">qwen2.5_1.5B_base</text>
-                    <text x="328"  y="465" text-anchor="end" transform="rotate(-40 328 465)">qwen2.5_3B_base</text>
-                    <text x="438"  y="465" text-anchor="end" transform="rotate(-40 438 465)">qwen2.5_.5B_4bit_CLARA</text>
-                    <text x="548"  y="465" text-anchor="end" transform="rotate(-40 548 465)">qwen2.5_1.5B_4bit_CLARA</text>
-                    <text x="658"  y="465" text-anchor="end" transform="rotate(-40 658 465)">qwen2.5_3B_4bit_CLARA</text>
-                    <text x="768"  y="465" text-anchor="end" transform="rotate(-40 768 465)">qwen2.5_7B_4bit_CLARA</text>
-                    <text x="878"  y="465" text-anchor="end" transform="rotate(-40 878 465)">qwen3_0.6B_base</text>
-                    <text x="988"  y="465" text-anchor="end" transform="rotate(-40 988 465)">qwen3_1.7B_base</text>
-                    <text x="1098" y="465" text-anchor="end" transform="rotate(-40 1098 465)">qwen3_0.6B_4bit_CLARA</text>
-                    <text x="1208" y="465" text-anchor="end" transform="rotate(-40 1208 465)">qwen3_1.7B_4bit_CLARA</text>
-                    <text x="1318" y="465" text-anchor="end" transform="rotate(-40 1318 465)">qwen3_4B_4bit_CLARA</text>
-                    <text x="1428" y="465" text-anchor="end" transform="rotate(-40 1428 465)">qwen3_8B_4bit_CLARA</text>
-                    <text x="1538" y="465" text-anchor="end" transform="rotate(-40 1538 465)">qwen3.5-0.8B</text>
-                    <text x="1648" y="465" text-anchor="end" transform="rotate(-40 1648 465)">qwen3.5-2B</text>
+                    <text x="99"   y="465" text-anchor="end" transform="rotate(-40 99 465)">qwen2.5_0.5_Base</text>
+                    <text x="207"  y="465" text-anchor="end" transform="rotate(-40 207 465)">Qwen2.5-1.5-Base</text>
+                    <text x="315"  y="465" text-anchor="end" transform="rotate(-40 315 465)">qwen2.5_3_Base</text>
+                    <text x="423"  y="465" text-anchor="end" transform="rotate(-40 423 465)">qwen2.5_7_Base</text>
+                    <text x="531"  y="465" text-anchor="end" transform="rotate(-40 531 465)">CAT2.5_0.5B</text>
+                    <text x="639"  y="465" text-anchor="end" transform="rotate(-40 639 465)">CAT2.5_1.5B</text>
+                    <text x="747"  y="465" text-anchor="end" transform="rotate(-40 747 465)">CAT2.5_3B</text>
+                    <text x="855"  y="465" text-anchor="end" transform="rotate(-40 855 465)">CAT2.5_7B</text>
+                    <text x="963"  y="465" text-anchor="end" transform="rotate(-40 963 465)">qwen3_0.6B_base</text>
+                    <text x="1071" y="465" text-anchor="end" transform="rotate(-40 1071 465)">qwen3_1.7B_base</text>
+                    <text x="1179" y="465" text-anchor="end" transform="rotate(-40 1179 465)">qwen3_4B_base</text>
+                    <text x="1287" y="465" text-anchor="end" transform="rotate(-40 1287 465)">qwen3_8B_base</text>
+                    <text x="1395" y="465" text-anchor="end" transform="rotate(-40 1395 465)">CAT3_0.6B</text>
+                    <text x="1503" y="465" text-anchor="end" transform="rotate(-40 1503 465)">CAT3_1.7B</text>
+                    <text x="1611" y="465" text-anchor="end" transform="rotate(-40 1611 465)">CAT3_4B</text>
+                    <text x="1719" y="465" text-anchor="end" transform="rotate(-40 1719 465)">CAT3_8B</text>
                 </g>
             </svg>
         </div>
 
         <div class="chart-legend">
-            <div class="legend-item"><span class="legend-dot darkblue"></span>Qwen2.5 Base</div>
-            <div class="legend-item"><span class="legend-dot lightblue"></span>Qwen2.5 4bit CLARA</div>
-            <div class="legend-item"><span class="legend-dot darkorange"></span>Qwen3 Base</div>
-            <div class="legend-item"><span class="legend-dot peach"></span>Qwen3 4bit CLARA</div>
-            <div class="legend-item"><span class="legend-dot green"></span>Qwen3.5</div>
+            <div class="legend-item"><span class="legend-dot lightblue"></span>Qwen2.5 Base</div>
+            <div class="legend-item"><span class="legend-dot darkblue"></span>CAT2.5</div>
+            <div class="legend-item"><span class="legend-dot peach"></span>Qwen3 Base</div>
+            <div class="legend-item"><span class="legend-dot darkorange"></span>CAT3</div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE: QWEN3 4B 4BIT — TRAINING/EVAL LOSS -->
+<section data-transition="slide" data-auto-animate>
+    <div class="chart-slide">
+        <div class="problem-eyebrow">CAT3 — TRAINING DIAGNOSTICS</div>
+        <h1 class="problem-title" style="margin-bottom:1rem;">Qwen3 4B 4Bit Training and Evaluation Loss</h1>
+
+        <div class="chart-wrap">
+            <svg viewBox="0 0 1250 760" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+
+                <!-- gridlines (y: 0.6 to 2.2 step 0.2), plot area x:70-1180, y:50-560 -->
+                <g stroke="#E6DFD0" stroke-width="1">
+                    <line x1="70" y1="50"  x2="1180" y2="50" />
+                    <line x1="70" y1="114" x2="1180" y2="114" />
+                    <line x1="70" y1="177" x2="1180" y2="177" />
+                    <line x1="70" y1="241" x2="1180" y2="241" />
+                    <line x1="70" y1="305" x2="1180" y2="305" />
+                    <line x1="70" y1="369" x2="1180" y2="369" />
+                    <line x1="70" y1="432" x2="1180" y2="432" />
+                    <line x1="70" y1="496" x2="1180" y2="496" />
+                    <line x1="70" y1="560" x2="1180" y2="560" />
+                </g>
+                <line x1="70" y1="560" x2="1180" y2="560" stroke="#1C2A44" stroke-width="2"/>
+                <line x1="70" y1="50"  x2="70"   y2="560" stroke="#1C2A44" stroke-width="2"/>
+
+                <!-- y-axis labels -->
+                <g font-family="Inter" font-size="15" fill="#5C6B86" text-anchor="end">
+                    <text x="60" y="55">2.2</text>
+                    <text x="60" y="119">2.0</text>
+                    <text x="60" y="182">1.8</text>
+                    <text x="60" y="246">1.6</text>
+                    <text x="60" y="310">1.4</text>
+                    <text x="60" y="374">1.2</text>
+                    <text x="60" y="437">1.0</text>
+                    <text x="60" y="501">0.8</text>
+                    <text x="60" y="565">0.6</text>
+                </g>
+                <text x="22" y="305" font-family="Inter" font-size="15" fill="#5C6B86" transform="rotate(-90 22 305)" text-anchor="middle">Loss</text>
+
+                <!-- x-axis labels -->
+                <g font-family="Inter" font-size="15" fill="#5C6B86" text-anchor="middle">
+                    <text x="90"   y="585">0</text>
+                    <text x="276"  y="585">5</text>
+                    <text x="462"  y="585">10</text>
+                    <text x="648"  y="585">15</text>
+                    <text x="835"  y="585">20</text>
+                    <text x="1021" y="585">25</text>
+                    <text x="1170" y="585">30</text>
+                </g>
+                <text x="625" y="615" font-family="Inter" font-size="15" fill="#5C6B86" text-anchor="middle">Steps</text>
+
+                <!-- Training Loss (solid blue line, circle markers) -->
+                <polyline fill="none" stroke="#2C4A7C" stroke-width="2.5" points="
+                    90,142   127,69   164,146   202,187   239,229   276,280   313,267
+                    351,375  388,369  425,372   462,433   500,436   537,445   574,461
+                    611,468  649,439  686,493   723,480   760,503   798,484   835,503
+                    872,493  909,496  947,538   984,522   1021,496 1058,499  1095,477
+                    1133,490 1170,499" />
+                <g fill="#2C4A7C">
+                    <circle cx="90"   cy="142" r="5"/><circle cx="127"  cy="69"  r="5"/>
+                    <circle cx="164"  cy="146" r="5"/><circle cx="202"  cy="187" r="5"/>
+                    <circle cx="239"  cy="229" r="5"/><circle cx="276"  cy="280" r="5"/>
+                    <circle cx="313"  cy="267" r="5"/><circle cx="351"  cy="375" r="5"/>
+                    <circle cx="388"  cy="369" r="5"/><circle cx="425"  cy="372" r="5"/>
+                    <circle cx="462"  cy="433" r="5"/><circle cx="500"  cy="436" r="5"/>
+                    <circle cx="537"  cy="445" r="5"/><circle cx="574"  cy="461" r="5"/>
+                    <circle cx="611"  cy="468" r="5"/><circle cx="649"  cy="439" r="5"/>
+                    <circle cx="686"  cy="493" r="5"/><circle cx="723"  cy="480" r="5"/>
+                    <circle cx="760"  cy="503" r="5"/><circle cx="798"  cy="484" r="5"/>
+                    <circle cx="835"  cy="503" r="5"/><circle cx="872"  cy="493" r="5"/>
+                    <circle cx="909"  cy="496" r="5"/><circle cx="947"  cy="538" r="5"/>
+                    <circle cx="984"  cy="522" r="5"/><circle cx="1021" cy="496" r="5"/>
+                    <circle cx="1058" cy="499" r="5"/><circle cx="1095" cy="477" r="5"/>
+                    <circle cx="1133" cy="490" r="5"/><circle cx="1170" cy="499" r="5"/>
+                </g>
+
+                <!-- Evaluation Loss (dashed orange line, x markers) -->
+                <polyline fill="none" stroke="#C2693A" stroke-width="2.5" stroke-dasharray="8,5" points="
+                    90,114   127,142  164,190  202,244  239,286  276,318  313,346
+                    351,369  388,401  425,420  462,436  500,448  537,461  574,471
+                    611,480  649,490  686,496  723,499  760,506  798,509  835,512
+                    872,515  909,519  947,522  984,522  1021,525 1058,525 1095,525
+                    1133,525 1170,525" />
+                <g fill="none" stroke="#C2693A" stroke-width="2.2">
+                    <g transform="translate(90,114)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(127,142)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(164,190)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(202,244)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(239,286)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(276,318)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(313,346)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(351,369)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(388,401)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(425,420)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(462,436)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(500,448)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(537,461)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(574,471)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(611,480)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(649,490)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(686,496)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(723,499)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(760,506)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(798,509)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(835,512)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(872,515)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(909,519)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(947,522)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(984,522)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(1021,525)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(1058,525)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(1095,525)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(1133,525)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <g transform="translate(1170,525)"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                </g>
+
+                <!-- Stats box (placed top-right, clear of the line since the curve drops below y=350 by step 8) -->
+                <rect x="840" y="58" width="330" height="85" rx="10" fill="#F7E8C9" stroke="#1C2A44" stroke-width="1.2"/>
+                <g font-family="Inter" font-size="13.5" fill="#1C2A44" text-anchor="middle">
+                    <text x="1005" y="85">Peak Reserved Memory: 13.043 GB (89.563 %)</text>
+                    <text x="1005" y="107">Peak Reserved Memory for Training: 6.41 GB (44.016 %)</text>
+                    <text x="1005" y="129">13.38 minutes used for training.</text>
+                </g>
+
+                <!-- Legend -->
+                <g font-family="Inter" font-size="15" fill="#1C2A44">
+                    <circle cx="105" cy="650" r="5" fill="#2C4A7C"/>
+                    <text x="118" y="655">Training Loss</text>
+                    <g transform="translate(290,650)" stroke="#C2693A" stroke-width="2.2"><line x1="-5" y1="-5" x2="5" y2="5"/><line x1="-5" y1="5" x2="5" y2="-5"/></g>
+                    <text x="303" y="655">Evaluation Loss</text>
+                </g>
+            </svg>
         </div>
     </div>
 </section>
