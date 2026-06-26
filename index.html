@@ -1434,6 +1434,151 @@
     line-height: 1.5;
     margin: 0;
 }
+/* --- Model Scores: bar chart slide --- */
+.chart-slide {
+    height: 100%;
+    width: 100%;
+    padding: 4.5rem 5rem 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.chart-wrap {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-legend {
+    display: flex;
+    gap: 1.8rem;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.chart-legend .legend-item { font-size: 0.85rem; }
+.chart-legend .legend-dot.darkblue { background: #2C4A7C; }
+.chart-legend .legend-dot.lightblue { background: #8FB3DE; }
+.chart-legend .legend-dot.darkorange { background: #C2693A; }
+.chart-legend .legend-dot.peach { background: #EAB088; }
+.chart-legend .legend-dot.green { background: #4F9D6E; }
+
+/* --- CORE Dataset: file split + chunk pipeline --- */
+.file-split-row {
+    display: flex;
+    gap: 1.4rem;
+    margin-top: 1rem;
+}
+
+.file-stat-card {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    padding: 1.6rem 1.8rem;
+    box-shadow: 0 8px 22px rgba(28, 42, 68, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.file-stat-icon {
+    width: 3.2rem; height: 3.2rem;
+    border-radius: 50%;
+    background: rgba(46,156,143,0.1);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.file-stat-icon svg { width: 22px; height: 22px; color: var(--teal); }
+
+.file-stat-card.test .file-stat-icon { background: rgba(184,137,58,0.12); }
+.file-stat-card.test .file-stat-icon svg { color: var(--gold); }
+
+.file-stat-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--ink);
+    display: block;
+    line-height: 1;
+}
+
+.file-stat-label {
+    font-size: 0.85rem;
+    color: var(--slate);
+    font-weight: 600;
+}
+
+/* --- Chunking visual: overlapping jpg pairs --- */
+.chunk-flow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.6rem;
+    flex-wrap: wrap;
+}
+
+.jpg-tile {
+    width: 2.6rem;
+    height: 3.4rem;
+    background: white;
+    border: 1.5px solid var(--line);
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--slate);
+    box-shadow: 0 4px 10px rgba(28,42,68,0.06);
+    flex-shrink: 0;
+}
+
+.chunk-bracket {
+    display: flex;
+    align-items: center;
+    gap: -0.3rem;
+    padding: 0.4rem;
+    border: 1.5px dashed var(--teal);
+    border-radius: 0.6rem;
+    background: rgba(46,156,143,0.05);
+}
+
+.chunk-bracket .jpg-tile:not(:last-child) { margin-right: -0.6rem; }
+
+.chunk-plus { color: var(--line); font-size: 1.2rem; font-weight: 700; }
+
+.chunk-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.4rem;
+    text-align: center;
+}
+
+.chunk-unit { display: flex; flex-direction: column; align-items: center; }
+
+/* --- Step counter for preprocessing pipeline --- */
+.step-counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: var(--ink);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-right: 0.6rem;
+    flex-shrink: 0;
+}
 		</style>
 	</head>
 	<body>
@@ -2317,6 +2462,625 @@
     </div>
 </section>
 
+<!-- SLIDE 28b: CAT — MODEL SCORES -->
+<section data-transition="slide" data-auto-animate>
+    <div class="chart-slide">
+        <div class="problem-eyebrow">CAT — MODEL SELECTION</div>
+        <h1 class="problem-title" style="margin-bottom:1rem;">Final Scores Across 15 Candidates</h1>
+
+        <div class="chart-wrap">
+            <svg viewBox="0 0 1760 620" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+                <!-- gridlines -->
+                <g stroke="#E6DFD0" stroke-width="1">
+                    <line x1="60" y1="40"  x2="1740" y2="40" />
+                    <line x1="60" y1="140" x2="1740" y2="140" />
+                    <line x1="60" y1="240" x2="1740" y2="240" />
+                    <line x1="60" y1="340" x2="1740" y2="340" />
+                    <line x1="60" y1="440" x2="1740" y2="440" />
+                </g>
+                <g font-family="Inter" font-size="15" fill="#5C6B86">
+                    <text x="50" y="44"  text-anchor="end">100</text>
+                    <text x="50" y="144" text-anchor="end">75</text>
+                    <text x="50" y="244" text-anchor="end">50</text>
+                    <text x="50" y="344" text-anchor="end">25</text>
+                    <text x="50" y="444" text-anchor="end">0</text>
+                </g>
+                <line x1="60" y1="440" x2="1740" y2="440" stroke="#1C2A44" stroke-width="2"/>
+
+                <!-- bars: baseline y=440, scale 4px per point -->
+                <!-- qwen2.5_.5B_base 57.85 -->
+                <rect x="68"   y="208.6" width="80" height="231.4" rx="6" fill="#2C4A7C"/>
+                <!-- qwen2.5_1.5B_base 66.45 -->
+                <rect x="178"  y="174.2" width="80" height="265.8" rx="6" fill="#2C4A7C"/>
+                <!-- qwen2.5_3B_base 70.65 -->
+                <rect x="288"  y="157.4" width="80" height="282.6" rx="6" fill="#2C4A7C"/>
+                <!-- qwen2.5_.5B_4bit_CLARA 61.80 -->
+                <rect x="398"  y="192.8" width="80" height="247.2" rx="6" fill="#8FB3DE"/>
+                <!-- qwen2.5_1.5B_4bit_CLARA 69.88 -->
+                <rect x="508"  y="160.5" width="80" height="279.5" rx="6" fill="#8FB3DE"/>
+                <!-- qwen2.5_3B_4bit_CLARA 75.25 -->
+                <rect x="618"  y="139.0" width="80" height="301.0" rx="6" fill="#8FB3DE"/>
+                <!-- qwen2.5_7B_4bit_CLARA 82.53 -->
+                <rect x="728"  y="109.9" width="80" height="330.1" rx="6" fill="#8FB3DE"/>
+                <!-- qwen3_0.6B_base 47.87 -->
+                <rect x="838"  y="248.5" width="80" height="191.5" rx="6" fill="#C2693A"/>
+                <!-- qwen3_1.7B_base 68.58 -->
+                <rect x="948"  y="165.7" width="80" height="274.3" rx="6" fill="#C2693A"/>
+                <!-- qwen3_0.6B_4bit_CLARA 71.36 -->
+                <rect x="1058" y="154.6" width="80" height="285.4" rx="6" fill="#EAB088"/>
+                <!-- qwen3_1.7B_4bit_CLARA 75.56 -->
+                <rect x="1168" y="137.8" width="80" height="302.2" rx="6" fill="#EAB088"/>
+                <!-- qwen3_4B_4bit_CLARA 81.94 -->
+                <rect x="1278" y="112.2" width="80" height="327.8" rx="6" fill="#EAB088"/>
+                <!-- qwen3_8B_4bit_CLARA 80.50 -->
+                <rect x="1388" y="118.0" width="80" height="322.0" rx="6" fill="#EAB088"/>
+                <!-- qwen3.5-0.8B 79.05 -->
+                <rect x="1498" y="123.8" width="80" height="316.2" rx="6" fill="#4F9D6E"/>
+                <!-- qwen3.5-2B 81.84 -->
+                <rect x="1608" y="112.6" width="80" height="327.4" rx="6" fill="#4F9D6E"/>
+
+                <!-- score labels above bars -->
+                <g font-family="Fraunces" font-size="17" font-weight="600" fill="#1C2A44" text-anchor="middle">
+                    <text x="108"  y="200">57.85</text>
+                    <text x="218"  y="166">66.45</text>
+                    <text x="328"  y="149">70.65</text>
+                    <text x="438"  y="185">61.80</text>
+                    <text x="548"  y="153">69.88</text>
+                    <text x="658"  y="131">75.25</text>
+                    <text x="768"  y="102">82.53</text>
+                    <text x="878"  y="241">47.87</text>
+                    <text x="988"  y="158">68.58</text>
+                    <text x="1098" y="147">71.36</text>
+                    <text x="1208" y="130">75.56</text>
+                    <text x="1318" y="105">81.94</text>
+                    <text x="1428" y="111">80.50</text>
+                    <text x="1538" y="116">79.05</text>
+                    <text x="1648" y="105">81.84</text>
+                </g>
+
+                <!-- rotated model name labels -->
+                <g font-family="Inter" font-size="14" fill="#5C6B86">
+                    <text x="108"  y="465" text-anchor="end" transform="rotate(-40 108 465)">qwen2.5_.5B_base</text>
+                    <text x="218"  y="465" text-anchor="end" transform="rotate(-40 218 465)">qwen2.5_1.5B_base</text>
+                    <text x="328"  y="465" text-anchor="end" transform="rotate(-40 328 465)">qwen2.5_3B_base</text>
+                    <text x="438"  y="465" text-anchor="end" transform="rotate(-40 438 465)">qwen2.5_.5B_4bit_CLARA</text>
+                    <text x="548"  y="465" text-anchor="end" transform="rotate(-40 548 465)">qwen2.5_1.5B_4bit_CLARA</text>
+                    <text x="658"  y="465" text-anchor="end" transform="rotate(-40 658 465)">qwen2.5_3B_4bit_CLARA</text>
+                    <text x="768"  y="465" text-anchor="end" transform="rotate(-40 768 465)">qwen2.5_7B_4bit_CLARA</text>
+                    <text x="878"  y="465" text-anchor="end" transform="rotate(-40 878 465)">qwen3_0.6B_base</text>
+                    <text x="988"  y="465" text-anchor="end" transform="rotate(-40 988 465)">qwen3_1.7B_base</text>
+                    <text x="1098" y="465" text-anchor="end" transform="rotate(-40 1098 465)">qwen3_0.6B_4bit_CLARA</text>
+                    <text x="1208" y="465" text-anchor="end" transform="rotate(-40 1208 465)">qwen3_1.7B_4bit_CLARA</text>
+                    <text x="1318" y="465" text-anchor="end" transform="rotate(-40 1318 465)">qwen3_4B_4bit_CLARA</text>
+                    <text x="1428" y="465" text-anchor="end" transform="rotate(-40 1428 465)">qwen3_8B_4bit_CLARA</text>
+                    <text x="1538" y="465" text-anchor="end" transform="rotate(-40 1538 465)">qwen3.5-0.8B</text>
+                    <text x="1648" y="465" text-anchor="end" transform="rotate(-40 1648 465)">qwen3.5-2B</text>
+                </g>
+            </svg>
+        </div>
+
+        <div class="chart-legend">
+            <div class="legend-item"><span class="legend-dot darkblue"></span>Qwen2.5 Base</div>
+            <div class="legend-item"><span class="legend-dot lightblue"></span>Qwen2.5 4bit CLARA</div>
+            <div class="legend-item"><span class="legend-dot darkorange"></span>Qwen3 Base</div>
+            <div class="legend-item"><span class="legend-dot peach"></span>Qwen3 4bit CLARA</div>
+            <div class="legend-item"><span class="legend-dot green"></span>Qwen3.5</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SLIDE 29: CORE — PURPOSE -->
+<section data-transition="slide" data-auto-animate>
+    <div class="purpose-slide">
+        <div class="problem-eyebrow">CORE</div>
+        <div class="purpose-quote">
+            <div class="purpose-bar"></div>
+            <p class="purpose-text">
+                CORE is a <span class="highlight">trained OCR model</span> for
+                extracting information from PDF contracts — turning scanned and
+                digital documents into structured, usable data.
+            </p>
+        </div>
+        <div class="purpose-meta">
+            <span class="purpose-meta-label">Model Focus</span>
+            <span class="crumb-active" style="font-size:1.1rem;">OCR & Information Extraction</span>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 30: CORE — DATASET (FILE SPLIT) -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CORE — DATASET</div>
+        <h1 class="problem-title">Source Contracts</h1>
+
+        <div class="file-split-row fragment">
+            <div class="file-stat-card">
+                <div class="file-stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                </div>
+                <div>
+                    <span class="file-stat-num">30</span>
+                    <span class="file-stat-label">PDF contracts — Train</span>
+                </div>
+            </div>
+            <div class="file-stat-card test">
+                <div class="file-stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                </div>
+                <div>
+                    <span class="file-stat-num">2</span>
+                    <span class="file-stat-label">PDF contracts — Test</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="detail-body fragment" style="margin-top:1.6rem; font-size:1.1rem;">32 total contracts, split <strong style="color:var(--ink);">30 / 2</strong> before any preprocessing begins.</p>
+    </div>
+</section>
+
+<!-- SLIDE 31: CORE — PREPROCESSING PIPELINE -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CORE — DATASET</div>
+        <h1 class="problem-title">Preprocessing Pipeline</h1>
+
+        <div class="fragment" style="margin-bottom:1.6rem;">
+            <p class="detail-body" style="font-size:1.1rem; margin:0;"><span class="step-counter">1</span>Each PDF page is converted into a JPG image.</p>
+        </div>
+
+        <div class="fragment" style="margin-bottom:1rem;">
+            <p class="detail-body" style="font-size:1.1rem; margin:0 0 0.8rem 0;"><span class="step-counter">2</span>Consecutive JPGs are grouped into overlapping 2-page chunks.</p>
+
+            <div class="chunk-flow">
+                <div class="chunk-unit">
+                    <div class="chunk-bracket">
+                        <div class="jpg-tile">1</div>
+                        <div class="jpg-tile">2</div>
+                    </div>
+                    <span class="chunk-label">Chunk 1</span>
+                </div>
+                <span class="chunk-plus">·</span>
+                <div class="chunk-unit">
+                    <div class="chunk-bracket">
+                        <div class="jpg-tile">2</div>
+                        <div class="jpg-tile">3</div>
+                    </div>
+                    <span class="chunk-label">Chunk 2</span>
+                </div>
+                <span class="chunk-plus">·</span>
+                <div class="chunk-unit">
+                    <div class="chunk-bracket">
+                        <div class="jpg-tile">3</div>
+                        <div class="jpg-tile">4</div>
+                    </div>
+                    <span class="chunk-label">Chunk 3</span>
+                </div>
+                <span class="chunk-plus">···</span>
+            </div>
+        </div>
+
+        <div class="fragment">
+            <p class="detail-body" style="font-size:1.1rem; margin:0;"><span class="step-counter">3</span>440 total chunks, then expanded with augmentation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 32: CORE — FINAL DATASET SIZE + SCHEMA -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CORE — DATASET</div>
+        <h1 class="problem-title">Final Dataset</h1>
+
+        <div class="dataset-stage">
+            <div class="fragment">
+                <div class="dataset-total">
+                    <span class="dataset-total-num">1,640</span>
+                    <span class="dataset-total-label">total sample points (440 chunks → augmented)</span>
+                </div>
+            </div>
+
+            <div class="schema-card fragment">
+                <div class="schema-label">Sample JSON Structure</div>
+                <div class="schema-code">{
+  <span class="schema-key">"chunk_i"</span>: <span class="schema-str">[ jpg_j, jpg_k ]</span>,
+  <span class="schema-key">"company_name"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"company_address"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"company_type"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"law_reference"</span>: {
+    <span class="schema-key">"law_number"</span>: <span class="schema-str">"string number"</span>,
+    <span class="schema-key">"law_year"</span>: <span class="schema-str">"string number"</span>
+  },
+  <span class="schema-key">"company_capital"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"commercial_register_number"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"approval_date"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"real_estate_registry_minutes_number"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"company_duration"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"company_activity"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"articles"</span>: [
+    { <span class="schema-key">"id"</span>: <span class="schema-str">"0"</span>, <span class="schema-key">"value"</span>: <span class="schema-str">"string"</span> },
+    { <span class="schema-key">"id"</span>: <span class="schema-str">"1"</span>, <span class="schema-key">"value"</span>: <span class="schema-str">"string"</span> }
+    <span style="color:#9aa6bd;">// ... rest of articles</span>
+  ]
+}</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 33: CORE — MODEL CANDIDATES -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CORE — MODEL SELECTION</div>
+        <h1 class="problem-title">Choosing the Base Model</h1>
+
+        <div class="compare-row">
+            <div class="compare-card fragment">
+                <h3 class="compare-name">Gemma</h3>
+                <span class="compare-verdict no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    Rejected
+                </span>
+                <p style="font-size:0.85rem; color:var(--slate); margin-top:0.8rem; line-height:1.5;">Heavy hallucinations,<br>especially with Arabic text</p>
+            </div>
+
+            <div class="compare-card fragment">
+                <h3 class="compare-name">DeepSeek</h3>
+                <span class="compare-verdict no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    Rejected
+                </span>
+                <p style="font-size:0.85rem; color:var(--slate); margin-top:0.8rem; line-height:1.5;">Heavy hallucinations,<br>especially with Arabic text</p>
+            </div>
+
+            <div class="compare-card fragment">
+                <h3 class="compare-name" style="font-size:1.2rem;">2-Model System</h3>
+                <span class="compare-verdict no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    Rejected
+                </span>
+                <p style="font-size:0.85rem; color:var(--slate); margin-top:0.8rem; line-height:1.5;">Running cost too high<br>for production use</p>
+            </div>
+
+            <div class="compare-card winner fragment">
+                <div class="compare-crown">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 6l5.5 4L12 4l3.5 6L21 6l-2 10H5z"/></svg>
+                </div>
+                <h3 class="compare-name">Qwen-VL</h3>
+                <span class="compare-verdict yes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    Selected
+                </span>
+                <p style="font-size:0.85rem; color:#9fd8d0; margin-top:0.8rem; line-height:1.5;">Reliable Arabic OCR<br>with vision-language support</p>
+            </div>
+        </div>
+
+        <p class="detail-body fragment" style="margin-top:1.8rem; font-size:1.1rem;">Qwen-VL was the only model that handled <strong style="color:var(--ink);">Arabic legal text consistently</strong> without hallucinating critical fields like numbers, dates, and names.</p>
+    </div>
+</section>
+
+<!-- SLIDE 34: CORE — VERSION SELECTION -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CORE — MODEL SELECTION</div>
+        <h1 class="problem-title">Picking a Qwen-VL Version</h1>
+
+        <div class="version-row">
+            <div class="version-card kept fragment">
+                <span class="version-tag ok">Kept</span>
+                <h3 class="version-name">Qwen 2.5VL</h3>
+                <p class="version-reason">Stable vision-language model with solid Arabic OCR baseline. Available in 3B parameter size.</p>
+            </div>
+            <div class="version-card kept fragment">
+                <span class="version-tag ok">Kept</span>
+                <h3 class="version-name">Qwen 3VL</h3>
+                <p class="version-reason">Newer generation with improved document understanding and stronger multilingual vision capabilities. Available in 4B and 8B sizes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 35: CORE — PARAM SIZE VARIANTS -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CORE — MODEL SELECTION</div>
+        <h1 class="problem-title">Size Variants per Version</h1>
+
+        <div class="family-block fragment">
+            <div class="family-name"><span class="fam-dot qwen25"></span>Qwen 2.5VL</div>
+            <div class="size-grid" style="grid-template-columns: repeat(1, 1fr); max-width: 14rem;">
+                <div class="size-chip"><span class="size-num">3B</span><span class="size-label">params</span></div>
+            </div>
+        </div>
+
+        <div class="family-block fragment">
+            <div class="family-name"><span class="fam-dot qwen3"></span>Qwen 3VL</div>
+            <div class="size-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 28rem;">
+                <div class="size-chip"><span class="size-num">4B</span><span class="size-label">params</span></div>
+                <div class="size-chip"><span class="size-num">8B</span><span class="size-label">params</span></div>
+            </div>
+        </div>
+
+        <p class="detail-body fragment" style="margin-top:2rem; font-size:1.1rem;">3 total candidates trained and evaluated — the best selected by <strong style="color:var(--ink);">human evaluation</strong> on test results.</p>
+    </div>
+</section>
+
+<!-- SLIDE 36: CORE — TRAINING PROCESS + WINNER -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CORE — TRAINING</div>
+        <h1 class="problem-title">From Candidates to Final Model</h1>
+
+        <div class="pipeline-row">
+            <div class="pipeline-step fragment">
+                <div class="pipeline-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
+                </div>
+                <div class="pipeline-label">Unsloth</div>
+                <p class="pipeline-desc">Training framework</p>
+            </div>
+            <div class="pipeline-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="pipeline-step fragment">
+                <div class="pipeline-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </div>
+                <div class="pipeline-label">LoRA Fine-Tuning</div>
+                <p class="pipeline-desc">Applied to all 3 size variants</p>
+            </div>
+            <div class="pipeline-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="pipeline-step fragment">
+                <div class="pipeline-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+                </div>
+                <div class="pipeline-label">Human Evaluation</div>
+                <p class="pipeline-desc">Judged by observing test output quality</p>
+            </div>
+            <div class="pipeline-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="pipeline-step emphasis fragment">
+                <div class="pipeline-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 6l5.5 4L12 4l3.5 6L21 6l-2 10H5z"/></svg>
+                </div>
+                <div class="pipeline-label">Qwen 3VL — 4B</div>
+                <p class="pipeline-desc">Best overall OCR accuracy on Arabic contracts</p>
+            </div>
+        </div>
+
+        <div class="pipeline-result fragment">
+            Winner: <span class="num">Qwen 3VL 4B</span> — selected by human judges for highest accuracy on Arabic legal documents.
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 37: RAG — OVERVIEW -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">RAG SYSTEM</div>
+        <h1 class="problem-title" data-id="rag-main-title">Why We Need RAG</h1>
+
+        <div class="pillar-row">
+            <div class="pillar-card fragment">
+                <div class="pillar-tag">Purpose 01</div>
+                <div class="pillar-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                </div>
+                <h3 class="pillar-name" style="font-size:1.4rem;">Article Retrieval</h3>
+                <p class="pillar-desc">CAT has a small context window — RAG finds exactly which article the user's prompt refers to and passes only that to CAT.</p>
+            </div>
+
+            <div class="pillar-card pillar-ink fragment">
+                <div class="pillar-tag">Purpose 02</div>
+                <div class="pillar-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3 class="pillar-name" style="font-size:1.4rem;">Metadata Consistency</h3>
+                <p class="pillar-desc">When CORE converts a contract, RAG links each article to its related metadata field — so CAT edits stay consistent with the full JSON structure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 38: RAG — PURPOSE 1 (ARTICLE RETRIEVAL FOR CAT) -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">RAG — PURPOSE 01</div>
+        <div class="title-row">
+            <h1 class="problem-title" data-id="rag-main-title" style="margin:0;">RAG for</h1>
+            <h1 class="title-detail">Article Retrieval</h1>
+        </div>
+
+        <div class="split-stage fragment" data-fragment-index="0">
+
+            <!-- LEFT: THE PROBLEM -->
+            <div class="split-half split-problem">
+                <div class="split-label">The Problem</div>
+                <p class="split-sentence">A contract can be 20+ pages with dozens of independent articles. CAT's context window is too small to receive the whole file — and it doesn't need to.</p>
+
+                <div class="icon-scatter">
+                    <div class="scatter-icon icon-wa">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        20+ pages
+                    </div>
+                    <div class="scatter-icon icon-call">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v5M15 4v5"/></svg>
+                        50+ articles
+                    </div>
+                    <div class="scatter-icon icon-wa2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+                        Context overflow
+                    </div>
+                    <div class="scatter-icon icon-msg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                        CAT fails
+                    </div>
+                </div>
+            </div>
+
+            <div class="split-divider"></div>
+
+            <!-- RIGHT: THE SOLUTION -->
+            <div class="split-half split-solution">
+                <div class="split-label">With RAG</div>
+                <p class="split-sentence">RAG reads the user's prompt, finds the exact article being referenced, and returns only that article's ID — so CAT receives just what it needs.</p>
+
+                <div class="solution-card">
+                    <div class="solution-card-head">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
+                        <span>RAG Pipeline</span>
+                    </div>
+                    <div class="solution-row">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                        User prompt received
+                        <span class="solution-tag">Step 1</span>
+                    </div>
+                    <div class="solution-row">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                        Matching article found
+                        <span class="solution-tag">Step 2</span>
+                    </div>
+                    <div class="solution-row">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Article ID → CAT
+                        <span class="solution-tag">Step 3</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 39: RAG — PURPOSE 2 (METADATA CONSISTENCY) -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">RAG — PURPOSE 02</div>
+        <div class="title-row">
+            <h1 class="problem-title" data-id="rag-main-title" style="margin:0;">RAG for</h1>
+            <h1 class="title-detail">Metadata Consistency</h1>
+        </div>
+
+        <div class="split-stage fragment" data-fragment-index="0">
+
+            <!-- LEFT: THE PROBLEM -->
+            <div class="split-half split-problem">
+                <div class="split-label">The Problem</div>
+                <p class="split-sentence">Some articles are directly linked to metadata fields like <code style="font-size:0.9rem; background:var(--line); padding:0.1rem 0.4rem; border-radius:4px;">company_capital</code>. If CAT edits that article, the metadata becomes stale and inconsistent.</p>
+
+                <div class="solution-card" style="margin-top:1rem; border-color: #E8B4A0; background:#FFF8F5;">
+                    <div class="solution-card-head">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#B85C3A" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                        <span style="color:#B85C3A;">Inconsistency Risk</span>
+                    </div>
+                    <div class="solution-row" style="border-color:#F0D5CC;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#B85C3A" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        <span style="color:var(--slate);">Article 7 edited → mentions new capital</span>
+                    </div>
+                    <div class="solution-row" style="border-color:#F0D5CC;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#B85C3A" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        <span style="color:var(--slate);"><code style="font-size:0.85rem;">company_capital</code> field still shows old value</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split-divider"></div>
+
+            <!-- RIGHT: THE SOLUTION -->
+            <div class="split-half split-solution">
+                <div class="split-label">With RAG</div>
+                <p class="split-sentence">On first CORE conversion, RAG scans every article, detects which metadata field it relates to, and adds a reference attribute — so any future CAT edit automatically updates the linked field.</p>
+
+                <div class="solution-card">
+                    <div class="solution-card-head">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>Enriched Article JSON</span>
+                    </div>
+                    <div style="font-family:'Inter',monospace; font-size:0.82rem; line-height:1.7; color:#E8ECF4; background:var(--ink); border-radius:0.6rem; padding:0.9rem 1.1rem; margin-top:0.5rem;">
+                        <span style="color:#9fd8d0;">"id"</span>: <span style="color:#E2B873;">"7"</span>,<br>
+                        <span style="color:#9fd8d0;">"value"</span>: <span style="color:#E2B873;">"رأس المال..."</span>,<br>
+                        <span style="color:#9fd8d0;">"metadata_ref"</span>: <span style="color:var(--teal);">"company_capital"</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 40: RAG — MODELS + MATH -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">RAG — ARCHITECTURE</div>
+        <h1 class="problem-title">Models & Mathematical Foundation</h1>
+
+        <!-- Two-column layout: pipeline on left, math on right -->
+        <div style="display:flex; gap:2rem; width:100%; flex:1; margin-top:0.5rem;">
+
+            <!-- LEFT: MODEL PIPELINE -->
+            <div style="flex:1; display:flex; flex-direction:column; gap:1.2rem;">
+
+                <div class="p-card fragment" style="flex:1;">
+                    <div class="p-num" style="color:var(--teal); font-size:1rem; margin-bottom:0.4rem;">DENSE RETRIEVER</div>
+                    <h3 style="font-size:1.15rem !important; margin:0 0 0.4rem 0 !important;">Qwen3-embedding-0.6B</h3>
+                    <p style="font-size:0.95rem;">Converts Arabic contract clauses into dense semantic vectors. Stored and searched using <strong style="color:var(--ink);">FAISS</strong> for fast nearest-neighbour lookup.</p>
+                    <div style="margin-top:0.8rem; display:flex; gap:0.5rem;">
+                        <span class="chip chip-a" style="animation:none; font-size:0.7rem;">Embedding</span>
+                        <span class="chip chip-c" style="animation:none; font-size:0.7rem;">FAISS Index</span>
+                    </div>
+                </div>
+
+                <div style="display:flex; justify-content:center; color:var(--gold);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px; height:28px;"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                </div>
+
+                <div class="p-card p-card-highlight fragment" style="flex:1;">
+                    <div class="p-num p-num-highlight" style="font-size:1rem; margin-bottom:0.4rem;">RE-RANKER</div>
+                    <h3 style="font-size:1.15rem !important; margin:0 0 0.4rem 0 !important;">Qwen3-reranker-0.6B</h3>
+                    <p style="font-size:0.95rem; color:#B9C2D6;">Cross-encoder that re-ranks the top retrieved clauses by evaluating the query and clause <strong style="color:white;">jointly</strong>, boosting precision beyond embedding search alone.</p>
+                    <div style="margin-top:0.8rem; display:flex; gap:0.5rem;">
+                        <span class="chip chip-a" style="animation:none; font-size:0.7rem; color:var(--teal);">Cross-Encoder</span>
+                        <span class="chip chip-b" style="animation:none; font-size:0.7rem;">Top-K Rerank</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: MATH -->
+            <div style="flex:1.3; display:flex; flex-direction:column; gap:1rem;">
+
+                <div class="eq-card fragment">
+                    <h3 class="eq-title"><span class="eq-dot" style="background:var(--teal);"></span>① Embed Clauses</h3>
+                    <div class="eq-formula">v<sub>i</sub> = f(d<sub>i</sub>)</div>
+                    <p class="eq-note">Each clause d<sub>i</sub> is passed through the embedding model f to produce a dense vector v<sub>i</sub></p>
+                </div>
+
+                <div class="eq-card fragment">
+                    <h3 class="eq-title"><span class="eq-dot" style="background:var(--teal);"></span>② Normalize</h3>
+                    <div class="eq-formula">v̂<sub>i</sub> = v<sub>i</sub> / ‖v<sub>i</sub>‖ &nbsp;&nbsp; q̂ = q / ‖q‖</div>
+                    <p class="eq-note">Both clause vectors and query vector are L2-normalized before comparison</p>
+                </div>
+
+                <div class="eq-card fragment">
+                    <h3 class="eq-title"><span class="eq-dot" style="background:var(--gold);"></span>③ Similarity &nbsp;&amp;&nbsp; ④ Top-K Retrieval</h3>
+                    <div class="eq-formula">S(q, d<sub>i</sub>) = q̂<sup>T</sup> v̂<sub>i</sub> &nbsp;&nbsp;→&nbsp;&nbsp; R = TopK( S(q, d<sub>i</sub>) )</div>
+                    <p class="eq-note">Cosine similarity between query and each clause; top-K highest scores retrieved from FAISS</p>
+                </div>
+
+                <div class="eq-card fragment">
+                    <h3 class="eq-title"><span class="eq-dot" style="background:var(--ink);"></span>⑤ Re-Rank &nbsp;&amp;&nbsp; ⑥ Best Clause</h3>
+                    <div class="eq-formula">r<sub>i</sub> = g(q, d<sub>i</sub>) &nbsp;&nbsp;→&nbsp;&nbsp; d* = argmax(r<sub>i</sub>)</div>
+                    <p class="eq-note">Cross-encoder g scores each (query, clause) pair jointly; the highest-scoring clause d* is selected</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 			</div>
 		</div>
 

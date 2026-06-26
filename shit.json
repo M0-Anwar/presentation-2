@@ -1,0 +1,25 @@
+{
+  "company_name": "string",
+  "company_address": "string",
+  "company_type": "string",
+  "law_reference": {
+    "law_number": "string number",
+    "law_year": "string number"
+  },
+  "company_capital": "string",
+  "commercial_register_number": "string",
+  "approval_date": "string",
+  "real_estate_registry_minutes_number": "string",
+  "company_duration": "string",
+  "company_activity": "string",
+  "articles": [
+    {
+      "id": "0",
+      "value": "string"
+    },
+    {
+      "id": "1",
+      "value": "string"
+    }
+  ]
+}
