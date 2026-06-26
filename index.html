@@ -788,6 +788,484 @@
 				font-weight: 600;
 				text-align: center;
 			}
+
+			/* --- AI Architecture: 3-pillar layout --- */
+.pillar-row {
+    display: flex;
+    gap: 1.8rem;
+    width: 100%;
+    flex: 1;
+    align-items: stretch;
+    margin-top: 1rem;
+}
+
+.pillar-card {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 1.1rem;
+    padding: 2.4rem 2rem;
+    box-shadow: 0 10px 28px rgba(28, 42, 68, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pillar-badge {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+    background: rgba(46, 156, 143, 0.1);
+}
+
+.pillar-badge svg { width: 28px; height: 28px; color: var(--teal); }
+
+.pillar-card.pillar-gold .pillar-badge { background: rgba(184, 137, 58, 0.12); }
+.pillar-card.pillar-gold .pillar-badge svg { color: var(--gold); }
+
+.pillar-card.pillar-ink { background: var(--ink); border-color: var(--ink); }
+.pillar-card.pillar-ink .pillar-badge { background: rgba(46, 156, 143, 0.18); }
+.pillar-card.pillar-ink .pillar-name,
+.pillar-card.pillar-ink .pillar-tag { color: white !important; }
+.pillar-card.pillar-ink .pillar-desc { color: #B9C2D6 !important; }
+
+.pillar-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+}
+
+.pillar-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--ink);
+    margin: 0 0 0.8rem 0;
+}
+
+.pillar-desc {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--slate);
+    margin: 0;
+}
+
+/* --- CAT Purpose: manifesto / pull-quote layout --- */
+.purpose-slide {
+    height: 100%;
+    width: 100%;
+    padding: 0 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.purpose-quote {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.purpose-bar {
+    width: 4px;
+    border-radius: 2px;
+    background: var(--teal);
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.purpose-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 2.6rem;
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0;
+}
+
+.purpose-text .highlight {
+    color: var(--teal);
+}
+
+.purpose-meta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.purpose-meta-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--slate);
+    opacity: 0.6;
+}
+
+/* --- CAT Dataset: split breakdown bar + JSON schema card --- */
+.dataset-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.dataset-total {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.dataset-total-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--ink);
+}
+
+.dataset-total-label {
+    font-size: 1rem;
+    color: var(--slate);
+    font-weight: 600;
+}
+
+.split-bar {
+    display: flex;
+    width: 100%;
+    height: 2.6rem;
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(28, 42, 68, 0.08);
+}
+
+.split-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+}
+
+.split-train { background: var(--ink); flex: 375; }
+.split-val   { background: var(--teal); flex: 45; }
+.split-test  { background: var(--gold); flex: 45; }
+
+.split-legend {
+    display: flex;
+    gap: 1.8rem;
+    margin-top: 0.8rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--slate);
+    font-weight: 600;
+}
+
+.legend-dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+}
+
+.legend-dot.train { background: var(--ink); }
+.legend-dot.val { background: var(--teal); }
+.legend-dot.test { background: var(--gold); }
+
+.schema-card {
+    background: var(--ink);
+    border-radius: 1rem;
+    padding: 1.8rem 2.2rem;
+    box-shadow: 0 14px 32px rgba(28, 42, 68, 0.14);
+}
+
+.schema-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1rem;
+}
+
+.schema-code {
+    font-family: 'Inter', monospace;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #E8ECF4;
+    white-space: pre;
+}
+
+.schema-key { color: #9fd8d0; }
+.schema-str { color: #E2B873; }
+
+/* --- Model Comparison: candidate cards with verdict --- */
+.compare-row {
+    display: flex;
+    gap: 1.4rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.compare-card {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 8px 22px rgba(28, 42, 68, 0.05);
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.compare-card.winner {
+    background: var(--ink);
+    border-color: var(--ink);
+    box-shadow: 0 16px 36px rgba(28, 42, 68, 0.18);
+    transform: translateY(-0.6rem);
+}
+
+.compare-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 0 0 0.8rem 0;
+}
+
+.compare-card.winner .compare-name { color: white !important; }
+
+.compare-verdict {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+}
+
+.compare-verdict.no { color: var(--slate); background: rgba(92,107,134,0.1); }
+.compare-verdict.yes { color: var(--teal); background: rgba(46,156,143,0.18); }
+.compare-verdict svg { width: 14px; height: 14px; }
+
+.compare-crown {
+    position: absolute;
+    top: -0.9rem;
+    right: 50%;
+    transform: translateX(50%);
+    background: var(--gold);
+    color: white;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(184,137,58,0.4);
+}
+
+.compare-crown svg { width: 16px; height: 16px; }
+
+/* --- Version elimination: 3-step row with one struck out --- */
+.version-row {
+    display: flex;
+    gap: 1.4rem;
+    width: 100%;
+    margin-top: 1rem;
+    align-items: stretch;
+}
+
+.version-card {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    padding: 2rem 1.6rem;
+    box-shadow: 0 8px 22px rgba(28, 42, 68, 0.05);
+    box-sizing: border-box;
+}
+
+.version-card.rejected {
+    background: repeating-linear-gradient(135deg, #fff, #fff 10px, #FBF3EC 10px, #FBF3EC 20px);
+    opacity: 0.65;
+}
+
+.version-card.kept {
+    border-color: var(--teal);
+    box-shadow: 0 12px 28px rgba(46,156,143,0.12);
+}
+
+.version-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: var(--ink);
+    margin: 0 0 0.6rem 0;
+}
+
+.version-card.rejected .version-name { text-decoration: line-through; color: var(--slate); }
+
+.version-reason {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    color: var(--slate);
+    margin: 0;
+}
+
+.version-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+
+.version-tag.rej { color: #B85C3A; background: rgba(184,92,58,0.1); }
+.version-tag.ok { color: var(--teal); background: rgba(46,156,143,0.1); }
+
+/* --- Param size grid: two families x 4 sizes --- */
+.family-block { margin-bottom: 1.8rem; }
+
+.family-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--ink);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.family-name .fam-dot {
+    width: 0.8rem; height: 0.8rem; border-radius: 50%;
+}
+
+.fam-dot.qwen25 { background: var(--gold); }
+.fam-dot.qwen3 { background: var(--teal); }
+
+.size-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.size-chip {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    padding: 1.1rem;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(28, 42, 68, 0.05);
+}
+
+.size-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--ink);
+    display: block;
+}
+
+.size-label {
+    font-size: 0.7rem;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* --- Training pipeline: horizontal flow with arrows --- */
+.pipeline-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.pipeline-step {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    padding: 1.8rem 1.4rem;
+    text-align: center;
+    box-shadow: 0 8px 22px rgba(28, 42, 68, 0.05);
+}
+
+.pipeline-step.emphasis {
+    background: var(--ink);
+    border-color: var(--ink);
+}
+
+.pipeline-step.emphasis .pipeline-label,
+.pipeline-step.emphasis .pipeline-desc { color: white !important; }
+.pipeline-step.emphasis .pipeline-desc { color: #B9C2D6 !important; }
+
+.pipeline-icon {
+    width: 3rem; height: 3rem;
+    border-radius: 50%;
+    background: rgba(46,156,143,0.1);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem auto;
+}
+.pipeline-icon svg { width: 24px; height: 24px; color: var(--teal); }
+
+.pipeline-label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+}
+
+.pipeline-desc {
+    font-size: 0.9rem;
+    color: var(--slate);
+    margin: 0;
+}
+
+.pipeline-arrow {
+    flex-shrink: 0;
+    width: 2.4rem;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pipeline-arrow svg { width: 22px; height: 22px; }
+
+.pipeline-result {
+    text-align: center;
+    margin-top: 1.6rem;
+    font-size: 1.05rem;
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.pipeline-result .num { color: var(--gold); font-family: 'Fraunces', serif; font-size: 1.3rem; }
 		</style>
 	</head>
 	<body>
@@ -1341,6 +1819,236 @@
 						</div>
 					</div>
 				</section>
+
+				<!-- SLIDE 19: AI ARCHITECTURE OVERVIEW -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">THE AI ENGINE</div>
+        <h1 class="problem-title" data-id="ai-main-title">What Powers CLARA</h1>
+
+        <div class="pillar-row">
+            <div class="pillar-card fragment">
+                <div class="pillar-tag">Model 01</div>
+                <div class="pillar-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h7l2 2h7v3H4z"/><path d="M4 9h18v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/></svg>
+                </div>
+                <h3 class="pillar-name">CAT</h3>
+                <p class="pillar-desc">Edits Arabic legal contracts with precision and speed.</p>
+            </div>
+
+            <div class="pillar-card pillar-ink fragment">
+                <div class="pillar-tag">Model 02</div>
+                <div class="pillar-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                </div>
+                <h3 class="pillar-name">CORE</h3>
+                <p class="pillar-desc">A trained OCR model for information extraction from pdf contractes.</p>
+            </div>
+
+            <div class="pillar-card pillar-gold fragment">
+                <div class="pillar-tag">System 03</div>
+                <div class="pillar-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                </div>
+                <h3 class="pillar-name">RAG System</h3>
+                <p class="pillar-desc">Retrieves relevant legal context to ground every response.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 20: CAT — PURPOSE -->
+<section data-transition="slide" data-auto-animate>
+    <div class="purpose-slide">
+        <div class="problem-eyebrow">CAT</div>
+        <div class="purpose-quote">
+            <div class="purpose-bar"></div>
+            <p class="purpose-text">
+                CAT's purpose is to <span class="highlight">edit Arabic legal contracts</span> —
+                automatically, accurately, and at a fraction of the time it takes by hand.
+            </p>
+        </div>
+        <div class="purpose-meta">
+            <span class="purpose-meta-label">Model Focus</span>
+            <span class="crumb-active" style="font-size:1.1rem;">Arabic Contract Editing</span>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 21: CAT — DATASET -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CAT — DATASET</div>
+        <h1 class="problem-title">Training Data</h1>
+
+        <div class="dataset-stage">
+            <div class="fragment">
+                <div class="dataset-total">
+                    <span class="dataset-total-num">465</span>
+                    <span class="dataset-total-label">total data points</span>
+                </div>
+                <div class="split-bar">
+                    <div class="split-seg split-train">375 train</div>
+                    <div class="split-seg split-val">45 validation</div>
+                    <div class="split-seg split-test">45 test</div>
+                </div>
+                <div class="split-legend">
+                    <div class="legend-item"><span class="legend-dot train"></span>Train</div>
+                    <div class="legend-item"><span class="legend-dot val"></span>Validation</div>
+                    <div class="legend-item"><span class="legend-dot test"></span>Test</div>
+                </div>
+            </div>
+
+            <div class="schema-card fragment">
+                <div class="schema-label">Sample JSON Structure</div>
+                <div class="schema-code">{
+  <span class="schema-key">"action_title"</span>: <span class="schema-str">"string"</span>,
+  <span class="schema-key">"before"</span>: [ <span class="schema-str">"list of strings"</span> ],
+  <span class="schema-key">"after"</span>: [ <span class="schema-str">"list of strings"</span> ],
+  <span class="schema-key">"prompt"</span>: <span class="schema-str">"string"</span>
+}</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SLIDE 22: CAT — MODEL CANDIDATES -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CAT — MODEL SELECTION</div>
+        <h1 class="problem-title">Choosing the Base Model</h1>
+
+        <div class="compare-row">
+            <div class="compare-card fragment">
+                <h3 class="compare-name">Falcon</h3>
+                <span class="compare-verdict no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    Rejected
+                </span>
+            </div>
+            <div class="compare-card fragment">
+                <h3 class="compare-name">LLaMA</h3>
+                <span class="compare-verdict no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    Rejected
+                </span>
+            </div>
+            <div class="compare-card fragment">
+                <h3 class="compare-name">Gemma</h3>
+                <span class="compare-verdict no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    Rejected
+                </span>
+            </div>
+            <div class="compare-card winner fragment">
+                <div class="compare-crown">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 6l5.5 4L12 4l3.5 6L21 6l-2 10H5z"/></svg>
+                </div>
+                <h3 class="compare-name">Qwen</h3>
+                <span class="compare-verdict yes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    Selected
+                </span>
+            </div>
+        </div>
+        <p class="detail-body fragment" style="margin-top:1.8rem; font-size:1.1rem;">Qwen was chosen for its <strong style="color:var(--ink);">superior structural consistency</strong> and ease of fine-tuning compared to the alternatives.</p>
+    </div>
+</section>
+
+<!-- SLIDE 23: CAT — QWEN VERSION SELECTION -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CAT — MODEL SELECTION</div>
+        <h1 class="problem-title">Picking a Qwen Version</h1>
+
+        <div class="version-row">
+            <div class="version-card kept fragment">
+                <span class="version-tag ok">Kept</span>
+                <h3 class="version-name">Qwen 2.5</h3>
+                <p class="version-reason">Text-only, stable, well-documented — solid baseline for fine-tuning.</p>
+            </div>
+            <div class="version-card kept fragment">
+                <span class="version-tag ok">Kept</span>
+                <h3 class="version-name">Qwen 3</h3>
+                <p class="version-reason">Newer generation, text-only, improved reasoning structure.</p>
+            </div>
+            <div class="version-card rejected fragment">
+                <span class="version-tag rej">Rejected</span>
+                <h3 class="version-name">Qwen 3.5</h3>
+                <p class="version-reason">Multi-modal — includes vision layers we don't need. Removing them strips its advantage, making it pointless for our text-only task.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 24: CAT — PARAM SIZE VARIANTS -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CAT — MODEL SELECTION</div>
+        <h1 class="problem-title">Size Variants per Version</h1>
+
+        <div class="family-block fragment">
+            <div class="family-name"><span class="fam-dot qwen25"></span>Qwen 2.5</div>
+            <div class="size-grid">
+                <div class="size-chip"><span class="size-num">0.5B</span><span class="size-label">params</span></div>
+                <div class="size-chip"><span class="size-num">1.5B</span><span class="size-label">params</span></div>
+                <div class="size-chip"><span class="size-num">3B</span><span class="size-label">params</span></div>
+                <div class="size-chip"><span class="size-num">7B</span><span class="size-label">params</span></div>
+            </div>
+        </div>
+
+        <div class="family-block fragment">
+            <div class="family-name"><span class="fam-dot qwen3"></span>Qwen 3</div>
+            <div class="size-grid">
+                <div class="size-chip"><span class="size-num">0.6B</span><span class="size-label">params</span></div>
+                <div class="size-chip"><span class="size-num">1.7B</span><span class="size-label">params</span></div>
+                <div class="size-chip"><span class="size-num">4B</span><span class="size-label">params</span></div>
+                <div class="size-chip"><span class="size-num">8B</span><span class="size-label">params</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 25: CAT — TRAINING PROCESS -->
+<section data-transition="slide" data-auto-animate>
+    <div class="problem-slide">
+        <div class="problem-eyebrow">CAT — TRAINING</div>
+        <h1 class="problem-title">From Base Models to Candidates</h1>
+
+        <div class="pipeline-row">
+            <div class="pipeline-step fragment">
+                <div class="pipeline-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
+                </div>
+                <div class="pipeline-label">Unsloth</div>
+                <p class="pipeline-desc">Training framework</p>
+            </div>
+            <div class="pipeline-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="pipeline-step fragment">
+                <div class="pipeline-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </div>
+                <div class="pipeline-label">LoRA Fine-Tuning</div>
+                <p class="pipeline-desc">Applied to all 8 size variants</p>
+            </div>
+            <div class="pipeline-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div class="pipeline-step emphasis fragment">
+                <div class="pipeline-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+                </div>
+                <div class="pipeline-label">8 Trained Models</div>
+                <p class="pipeline-desc">4 sizes × 2 Qwen versions</p>
+            </div>
+        </div>
+
+        <div class="pipeline-result fragment">Which one is best? We need a <span class="num">score function</span> to decide.</div>
+    </div>
+</section>
 
 			</div>
 		</div>
