@@ -1579,6 +1579,51 @@
     margin-right: 0.6rem;
     flex-shrink: 0;
 }
+
+/* =====================================================
+   FONT SIZE BOOST — increases all text ~30% larger
+   while keeping every slide's layout intact.
+   All rem-based sizes scale automatically via html
+   font-size. !important overrides handle hardcoded px.
+   ===================================================== */
+
+html {
+    font-size: 20px; /* was browser default 16px → +25% boost */
+}
+
+/* Cover title override (was 6.5rem !important) */
+.cover-title {
+    font-size: 7.5rem !important;
+}
+
+/* Main content slide titles (was 3.2rem !important) */
+.problem-title {
+    font-size: 3.6rem !important;
+}
+
+/* Card headings (was 1.4rem !important) */
+.p-card h3 {
+    font-size: 1.6rem !important;
+}
+
+/* Placeholder h2 (was 2rem !important) */
+.placeholder-content h2 {
+    font-size: 2.3rem !important;
+}
+
+/* Thank-you slide inline font sizes — override via classes */
+.thankyou-eyebrow  { font-size: 0.85rem !important; }
+.thankyou-title    { font-size: 3.8rem !important; }
+.thankyou-body     { font-size: 1.1rem !important; }
+.thankyou-teamhdr  { font-size: 0.78rem !important; }
+.thankyou-name     { font-size: 1.05rem !important; }
+.thankyou-role     { font-size: 0.9rem !important; }
+.thankyou-badge    { font-size: 0.78rem !important; }
+.thankyou-avatar   { font-size: 0.78rem !important; }
+.thankyou-footer-l { font-size: 0.85rem !important; }
+.thankyou-footer-r { font-size: 1.15rem !important; }
+.thankyou-sup-lbl  { font-size: 0.72rem !important; }
+.thankyou-sup-name { font-size: 1.05rem !important; }
 		</style>
 	</head>
 	<body>
@@ -2126,7 +2171,7 @@
 				<section data-transition="zoom">
 					<div class="ai-intro-slide">
 						<div class="ai-glow"></div>
-						<div style="text-align:center;">
+						<div style="text-align:center; transform: scale(0.78); transform-origin: center center;">
 							<h1 class="ai-big-title">AI</h1>
 							<div class="ai-subtitle">Powering the next generation of CLARA</div>
 						</div>
@@ -2228,7 +2273,7 @@
 
 <!-- SLIDE 22: CAT — MODEL CANDIDATES -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide">
+    <div class="problem-slide" style="zoom: 0.82;">
         <div class="problem-eyebrow">CAT — MODEL SELECTION</div>
         <h1 class="problem-title">Choosing the Base Model</h1>
 
@@ -2430,7 +2475,7 @@
 
 <!-- SLIDE 28: SCORE FUNCTION — THE EQUATIONS -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide">
+    <div class="problem-slide" style="zoom: 0.85;">
         <div class="problem-eyebrow">CAT — SCORE FUNCTION</div>
         <h1 class="problem-title">Metric Equations</h1>
 
@@ -2725,7 +2770,7 @@
 
 <!-- SLIDE 30: CORE — DATASET (FILE SPLIT) -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide">
+    <div class="problem-slide" style="zoom: 0.82;">
         <div class="problem-eyebrow">CORE — DATASET</div>
         <h1 class="problem-title">Source Contracts</h1>
 
@@ -2803,7 +2848,7 @@
 
 <!-- SLIDE 32: CORE — FINAL DATASET SIZE + SCHEMA -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide">
+    <div class="problem-slide" style="zoom: 0.82;">
         <div class="problem-eyebrow">CORE — DATASET</div>
         <h1 class="problem-title">Final Dataset</h1>
 
@@ -3268,78 +3313,78 @@
   <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:3rem;">
 
     <div style="flex:1;">
-      <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.22em; color:#B8893A; margin-bottom:0.6rem;">GRADUATION PROJECT · 2026</div>
-      <h1 style="font-family:'Georgia',serif; font-size:3.2rem; font-weight:600; color:#1C2A44; margin:0 0 0.3rem 0; line-height:1;">Thank You</h1>
+      <div style="font-size:0.88rem; font-weight:700; letter-spacing:0.22em; color:#B8893A; margin-bottom:0.6rem;">GRADUATION PROJECT · 2026</div>
+      <h1 style="font-family:'Georgia',serif; font-size:3.9rem; font-weight:600; color:#1C2A44; margin:0 0 0.3rem 0; line-height:1;">Thank You</h1>
       <div style="width:2.8rem; height:2px; background:#B8893A; margin:1rem 0 1.4rem 0;"></div>
-      <p style="font-size:0.95rem; color:#5C6B86; line-height:1.65; max-width:22rem; margin:0;">Built with care, trained with precision, and deployed with purpose — CLARA is ready.</p>
+      <p style="font-size:1.15rem; color:#5C6B86; line-height:1.65; max-width:22rem; margin:0;">Built with care, trained with precision, and deployed with purpose — CLARA is ready.</p>
     </div>
 
     <div style="flex:1.4;">
-      <div style="font-size:0.65rem; font-weight:700; letter-spacing:0.18em; color:#5C6B86; margin-bottom:0.9rem; opacity:0.7;">THE TEAM</div>
+      <div style="font-size:0.8rem; font-weight:700; letter-spacing:0.18em; color:#5C6B86; margin-bottom:0.9rem; opacity:0.7;">THE TEAM</div>
 
       <div style="display:flex; flex-direction:column; gap:0.55rem;">
 
         <div style="display:flex; align-items:center; gap:0.9rem; background:white; border:1px solid #E6DFD0; border-radius:0.7rem; padding:0.65rem 1rem;">
-          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#1C2A44; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:white; flex-shrink:0;">AK</div>
+          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#1C2A44; display:flex; align-items:center; justify-content:center; font-size:0.82rem; font-weight:700; color:white; flex-shrink:0;">AK</div>
           <div>
-            <div style="font-weight:700; font-size:0.88rem; color:#1C2A44;">Ahmed Elkot</div>
-            <div style="font-size:0.75rem; color:#5C6B86;">Project idea & CAT model</div>
+            <div style="font-weight:700; font-size:1.05rem; color:#1C2A44;">Ahmed Elkot</div>
+            <div style="font-size:0.92rem; color:#5C6B86;">Project idea & CAT model</div>
           </div>
-          <div style="margin-left:auto; font-size:0.65rem; font-weight:700; color:#2E9C8F; background:rgba(46,156,143,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">CAT</div>
+          <div style="margin-left:auto; font-size:0.82rem; font-weight:700; color:#2E9C8F; background:rgba(46,156,143,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">CAT</div>
         </div>
 
         <div style="display:flex; align-items:center; gap:0.9rem; background:white; border:1px solid #E6DFD0; border-radius:0.7rem; padding:0.65rem 1rem;">
-          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#2E9C8F; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:white; flex-shrink:0;">AY</div>
+          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#2E9C8F; display:flex; align-items:center; justify-content:center; font-size:0.82rem; font-weight:700; color:white; flex-shrink:0;">AY</div>
           <div>
-            <div style="font-weight:700; font-size:0.88rem; color:#1C2A44;">Ahmed Yehia</div>
-            <div style="font-size:0.75rem; color:#5C6B86;">CORE model</div>
+            <div style="font-weight:700; font-size:1.05rem; color:#1C2A44;">Ahmed Yehia</div>
+            <div style="font-size:0.92rem; color:#5C6B86;">CORE model</div>
           </div>
-          <div style="margin-left:auto; font-size:0.65rem; font-weight:700; color:#2E9C8F; background:rgba(46,156,143,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">CORE</div>
+          <div style="margin-left:auto; font-size:0.82rem; font-weight:700; color:#2E9C8F; background:rgba(46,156,143,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">CORE</div>
         </div>
 
         <div style="display:flex; align-items:center; gap:0.9rem; background:white; border:1px solid #E6DFD0; border-radius:0.7rem; padding:0.65rem 1rem;">
-          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#5C6B86; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:white; flex-shrink:0;">SM</div>
+          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#5C6B86; display:flex; align-items:center; justify-content:center; font-size:0.82rem; font-weight:700; color:white; flex-shrink:0;">SM</div>
           <div>
-            <div style="font-weight:700; font-size:0.88rem; color:#1C2A44;">Saif Mohamed</div>
-            <div style="font-size:0.75rem; color:#5C6B86;">RAG & Logs feature</div>
+            <div style="font-weight:700; font-size:1.05rem; color:#1C2A44;">Saif Mohamed</div>
+            <div style="font-size:0.92rem; color:#5C6B86;">RAG & Logs feature</div>
           </div>
-          <div style="margin-left:auto; font-size:0.65rem; font-weight:700; color:#B8893A; background:rgba(184,137,58,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">RAG</div>
+          <div style="margin-left:auto; font-size:0.82rem; font-weight:700; color:#B8893A; background:rgba(184,137,58,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">RAG</div>
         </div>
 
         <div style="display:flex; align-items:center; gap:0.9rem; background:white; border:1px solid #E6DFD0; border-radius:0.7rem; padding:0.65rem 1rem;">
-          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#1C2A44; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:#2E9C8F; flex-shrink:0;">AY</div>
+          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#1C2A44; display:flex; align-items:center; justify-content:center; font-size:0.82rem; font-weight:700; color:#2E9C8F; flex-shrink:0;">AY</div>
           <div>
-            <div style="font-weight:700; font-size:0.88rem; color:#1C2A44;">Amr Yasser</div>
-            <div style="font-size:0.75rem; color:#5C6B86;">CAT score function & HR helper</div>
+            <div style="font-weight:700; font-size:1.05rem; color:#1C2A44;">Amr Yasser</div>
+            <div style="font-size:0.92rem; color:#5C6B86;">CAT score function & HR helper</div>
           </div>
-          <div style="margin-left:auto; font-size:0.65rem; font-weight:700; color:#2E9C8F; background:rgba(46,156,143,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">SCORE · HR</div>
+          <div style="margin-left:auto; font-size:0.82rem; font-weight:700; color:#2E9C8F; background:rgba(46,156,143,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">SCORE · HR</div>
         </div>
 
         <div style="display:flex; align-items:center; gap:0.9rem; background:white; border:1px solid #E6DFD0; border-radius:0.7rem; padding:0.65rem 1rem;">
-          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#2E9C8F; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:white; flex-shrink:0;">MA</div>
+          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#2E9C8F; display:flex; align-items:center; justify-content:center; font-size:0.82rem; font-weight:700; color:white; flex-shrink:0;">MA</div>
           <div>
-            <div style="font-weight:700; font-size:0.88rem; color:#1C2A44;">Mohamed Anwar</div>
-            <div style="font-size:0.75rem; color:#5C6B86;">Task management & file organization</div>
+            <div style="font-weight:700; font-size:1.05rem; color:#1C2A44;">Mohamed Anwar</div>
+            <div style="font-size:0.92rem; color:#5C6B86;">Task management & file organization</div>
           </div>
-          <div style="margin-left:auto; font-size:0.65rem; font-weight:700; color:#B8893A; background:rgba(184,137,58,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">Tasks · Files</div>
+          <div style="margin-left:auto; font-size:0.82rem; font-weight:700; color:#B8893A; background:rgba(184,137,58,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">Tasks · Files</div>
         </div>
 
         <div style="display:flex; align-items:center; gap:0.9rem; background:white; border:1px solid #E6DFD0; border-radius:0.7rem; padding:0.65rem 1rem;">
-          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#5C6B86; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:white; flex-shrink:0;">AE</div>
+          <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#5C6B86; display:flex; align-items:center; justify-content:center; font-size:0.82rem; font-weight:700; color:white; flex-shrink:0;">AE</div>
           <div>
-            <div style="font-weight:700; font-size:0.88rem; color:#1C2A44;">Adham Eihab</div>
-            <div style="font-size:0.75rem; color:#5C6B86;">Security & contract output formatting</div>
+            <div style="font-weight:700; font-size:1.05rem; color:#1C2A44;">Adham Eihab</div>
+            <div style="font-size:0.92rem; color:#5C6B86;">Security & contract output formatting</div>
           </div>
-          <div style="margin-left:auto; font-size:0.65rem; font-weight:700; color:#5C6B86; background:rgba(92,107,134,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">Security</div>
+          <div style="margin-left:auto; font-size:0.82rem; font-weight:700; color:#5C6B86; background:rgba(92,107,134,0.1); padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;">Security</div>
         </div>
 
       </div>
 
       <div style="margin-top:0.9rem; display:flex; align-items:center; gap:0.9rem; background:#1C2A44; border-radius:0.7rem; padding:0.7rem 1rem;">
-        <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#B8893A; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:white; flex-shrink:0;">ME</div>
+        <div style="width:2.2rem; height:2.2rem; border-radius:50%; background:#B8893A; display:flex; align-items:center; justify-content:center; font-size:0.82rem; font-weight:700; color:white; flex-shrink:0;">ME</div>
         <div>
-          <div style="font-size:0.6rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#5C6B86; margin-bottom:0.1rem;">Supervisor</div>
-          <div style="font-weight:700; font-size:0.9rem; color:white;">Dr. Mohamed El Halaby</div>
+          <div style="font-size:0.76rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#5C6B86; margin-bottom:0.1rem;">Supervisor</div>
+          <div style="font-weight:700; font-size:1.08rem; color:white;">Dr. Mohamed El Halaby</div>
         </div>
       </div>
 
@@ -3347,8 +3392,8 @@
   </div>
 
   <div style="margin-top:1.8rem; display:flex; justify-content:space-between; align-items:center; border-top:1px solid #E6DFD0; padding-top:1rem;">
-    <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.12em; color:#5C6B86; opacity:0.5; text-transform:uppercase;">CLARA · 2026</span>
-    <span style="font-family:'Georgia',serif; font-size:1rem; color:#B8893A; font-weight:500;">Questions welcome</span>
+    <span style="font-size:0.88rem; font-weight:600; letter-spacing:0.12em; color:#5C6B86; opacity:0.5; text-transform:uppercase;">CLARA · 2026</span>
+    <span style="font-family:'Georgia',serif; font-size:1.2rem; color:#B8893A; font-weight:500;">Questions welcome</span>
   </div>
 
 </div>
@@ -3364,7 +3409,7 @@
 				width: 1920,
 				height: 1080,
 				margin: 0.05,
-				minScale: 1.0,
+minScale: 0.6,
 				maxScale: 1.0,
 
 				// Default transition for the presentation (overridden locally per slide above)
