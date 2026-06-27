@@ -1610,6 +1610,11 @@ html {
 .placeholder-content h2 {
     font-size: 2.3rem !important;
 }
+.reveal .slides section {
+    padding-bottom: 100px;
+    
+    box-sizing: border-box;
+}
 
 /* Thank-you slide inline font sizes — override via classes */
 .thankyou-eyebrow  { font-size: 0.85rem !important; }
@@ -1633,7 +1638,7 @@ html {
 				<!-- SLIDE 1: COVER -->
 				<!-- This slide transitions away with a smooth slide transition override -->
 				<section data-transition="slide">
-					<div class="cover">
+					<div class="cover" style="zoom: 1.3;">
 						<div class="cover-eyebrow">GRADUATION PROJECT &nbsp;·&nbsp; 2026</div>
 						<h1 class="cover-title">CLARA</h1>
 						<div class="cover-subtitle-row">
@@ -1656,7 +1661,7 @@ html {
 
 				<!-- SLIDE 2: PROBLEM STATEMENT OVERVIEW -->
 				<section data-transition="slide" data-auto-animate>
-					<div class="problem-slide">
+					<div class="problem-slide" style="zoom: 1.2;">
 						<div class="problem-eyebrow">THE CHALLENGE</div>
 						<h1 class="problem-title" data-id="main-title">Problem Statement</h1>
 
@@ -2342,7 +2347,7 @@ html {
 
 <!-- SLIDE 24: CAT — PARAM SIZE VARIANTS -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide">
+    <div class="problem-slide" style="zoom: 1.6;">
         <div class="problem-eyebrow">CAT — MODEL SELECTION</div>
         <h1 class="problem-title">Size Variants per Version</h1>
 
@@ -2475,7 +2480,7 @@ html {
 
 <!-- SLIDE 28: SCORE FUNCTION — THE EQUATIONS -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide" style="zoom: 0.85;">
+    <div class="problem-slide" style="zoom: 1.3;">
         <div class="problem-eyebrow">CAT — SCORE FUNCTION</div>
         <h1 class="problem-title">Metric Equations</h1>
 
@@ -2483,7 +2488,7 @@ html {
             <div class="eq-card fragment">
                 <h3 class="eq-title"><span class="eq-dot" style="background:var(--gold);"></span>ROUGE-L</h3>
                 <div class="eq-formula">F = 2PR / (P + R)</div>
-                <p class="eq-note">P = LCS(pred, gold) / |pred| &nbsp;·&nbsp; R = LCS(pred, gold) / |gold|</p>
+                <p class="eq-note">P = |LCS(pred, gold)| / |pred| &nbsp;·&nbsp; R = |LCS(pred, gold)| / |gold|</p>
             </div>
 
             <div class="eq-card fragment">
@@ -2770,7 +2775,7 @@ html {
 
 <!-- SLIDE 30: CORE — DATASET (FILE SPLIT) -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide" style="zoom: 0.82;">
+    <div class="problem-slide" style="zoom: 1.3;">
         <div class="problem-eyebrow">CORE — DATASET</div>
         <h1 class="problem-title">Source Contracts</h1>
 
@@ -2801,7 +2806,7 @@ html {
 
 <!-- SLIDE 31: CORE — PREPROCESSING PIPELINE -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide">
+    <div class="problem-slide" style="zoom: 1.3;">
         <div class="problem-eyebrow">CORE — DATASET</div>
         <h1 class="problem-title">Preprocessing Pipeline</h1>
 
@@ -2848,49 +2853,112 @@ html {
 
 <!-- SLIDE 32: CORE — FINAL DATASET SIZE + SCHEMA -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide" style="zoom: 0.82;">
-        <div class="problem-eyebrow">CORE — DATASET</div>
-        <h1 class="problem-title">Final Dataset</h1>
+  <div class="problem-slide" style="zoom: 1;">
+    <div class="problem-eyebrow">CORE — DATASET</div>
+    <h1 class="problem-title">Final Dataset</h1>
 
-        <div class="dataset-stage">
-            <div class="fragment">
-                <div class="dataset-total">
-                    <span class="dataset-total-num">1,640</span>
-                    <span class="dataset-total-label">total sample points (440 chunks → augmented)</span>
-                </div>
-            </div>
+    <div class="dataset-stage">
 
-            <div class="schema-card fragment">
-                <div class="schema-label">Sample JSON Structure</div>
-                <div class="schema-code">{
-  <span class="schema-key">"chunk_i"</span>: <span class="schema-str">[ jpg_j, jpg_k ]</span>,
-  <span class="schema-key">"company_name"</span>: <span class="schema-str">"string"</span>,
-  <span class="schema-key">"company_address"</span>: <span class="schema-str">"string"</span>,
-  <span class="schema-key">"company_type"</span>: <span class="schema-str">"string"</span>,
-  <span class="schema-key">"law_reference"</span>: {
-    <span class="schema-key">"law_number"</span>: <span class="schema-str">"string number"</span>,
-    <span class="schema-key">"law_year"</span>: <span class="schema-str">"string number"</span>
-  },
-  <span class="schema-key">"company_capital"</span>: <span class="schema-str">"string"</span>,
-  <span class="schema-key">"commercial_register_number"</span>: <span class="schema-str">"string"</span>,
-  <span class="schema-key">"approval_date"</span>: <span class="schema-str">"string"</span>,
-  <span class="schema-key">"real_estate_registry_minutes_number"</span>: <span class="schema-str">"string"</span>,
-  <span class="schema-key">"company_duration"</span>: <span class="schema-str">"string"</span>,
-  <span class="schema-key">"company_activity"</span>: <span class="schema-str">"string"</span>,
-  <span class="schema-key">"articles"</span>: [
-    { <span class="schema-key">"id"</span>: <span class="schema-str">"0"</span>, <span class="schema-key">"value"</span>: <span class="schema-str">"string"</span> },
-    { <span class="schema-key">"id"</span>: <span class="schema-str">"1"</span>, <span class="schema-key">"value"</span>: <span class="schema-str">"string"</span> }
-    <span style="color:#9aa6bd;">// ... rest of articles</span>
-  ]
-}</div>
-            </div>
+      <div class="fragment">
+        <div class="dataset-total">
+          <span class="dataset-total-num">1,640</span>
+          <span class="dataset-total-label">total sample points (440 chunks → augmented)</span>
         </div>
+      </div>
+
+      <div class="fragment" style="display: grid; grid-template-columns: 1fr 1.7fr; gap: 1.2rem; align-items: start; margin-top: 1.5rem;">
+
+        <div style="background: #1C2B40; border-radius: 14px; overflow: hidden;">
+          <div style="font-size: 22px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); padding: 0.9rem 1.2rem 0.4rem; font-family: inherit; font-weight: 600;">
+            Sample JSON structure
+          </div>
+          <pre style="font-family: 'Courier New', monospace; font-size: 30px; line-height: 2; padding: 0.3rem 1.2rem 1.1rem; margin: 0; background: none; text-align: left; color: #ffffff;">{
+  <span class="schema-key">"chunk_i"</span>: <span class="schema-str">[ jpg_j, jpg_k ]</span>,
+  <span class="schema-key">"metadata"</span>: <span class="schema-str">{ … }</span>,
+  <span class="schema-key">"articles"</span>: [
+    { <span class="schema-key">"id"</span>: <span class="schema-str">"0"</span>,
+      <span class="schema-key">"value"</span>: <span class="schema-str">"…"</span> },
+    <span style="color:rgba(255,255,255,0.35);">// …</span>
+  ]
+}</pre>
+        </div>
+
+        <div style="background: #1C2B40; border-radius: 14px; overflow: hidden;">
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 0.8rem 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.12); background: rgba(0,0,0,0.2);">
+            <span style="font-size: 26px; padding: 4px 14px; border-radius: 20px; background: #2A9D8F; color: #fff; font-weight: 700; font-family: inherit; letter-spacing: 0.04em;">✓ metadata</span>
+            <span style="font-size: 28px; color: rgba(255,255,255,0.6); font-style: italic;">used to generate amendment contracts</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr;">
+
+            <div style="padding: 0.6rem 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"company_name"</span></div>
+              <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+            </div>
+            <div style="padding: 0.6rem 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"company_address"</span></div>
+              <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+            </div>
+
+            <div style="padding: 0.6rem 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"company_type"</span></div>
+              <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+            </div>
+            <div style="padding: 0.6rem 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"company_capital"</span></div>
+              <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+            </div>
+
+            <div style="padding: 0.6rem 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"commercial_register_number"</span></div>
+              <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+            </div>
+            <div style="padding: 0.6rem 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"approval_date"</span></div>
+              <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+            </div>
+
+            <div style="padding: 0.6rem 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"real_estate_registry_minutes_number"</span></div>
+              <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+            </div>
+            <div style="padding: 0.6rem 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"company_duration"</span></div>
+              <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+            </div>
+
+            <div style="grid-column: 1 / -1; background: rgba(0,0,0,0.18); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0.5rem 1.3rem 0.65rem;">
+              <div style="font-family: 'Courier New', monospace; font-size: 24px; color: rgba(255,255,255,0.4); margin-bottom: 0.4rem;"><span class="schema-key">"law_reference"</span>: {</div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; padding-left: 1.2rem;">
+                <div style="padding: 0.25rem 0;">
+                  <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"law_number"</span></div>
+                  <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+                </div>
+                <div style="padding: 0.25rem 0;">
+                  <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"law_year"</span></div>
+                  <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+                </div>
+              </div>
+              <div style="font-family: 'Courier New', monospace; font-size: 24px; color: rgba(255,255,255,0.4); margin-top: 0.4rem;">}</div>
+            </div>
+
+            <div style="grid-column: 1 / -1; padding: 0.6rem 1.3rem;">
+              <div style="font-family: 'Courier New', monospace; font-size: 28px; font-weight: 600;"><span class="schema-key">"company_activity"</span></div>
+              <div style="font-size: 24px; margin-top: 2px;"><span class="schema-str">"string"</span></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- SLIDE 33: CORE — MODEL CANDIDATES -->
 <section data-transition="slide" data-auto-animate>
-    <div class="problem-slide">
+    <div class="problem-slide" style="zoom: 1.3;">
         <div class="problem-eyebrow">CORE — MODEL SELECTION</div>
         <h1 class="problem-title">Choosing the Base Model</h1>
 
@@ -3263,7 +3331,7 @@ html {
 
 <!-- SLIDE 41: WHY CAT & CORE INSTEAD OF GENERAL AI -->
 <section data-transition="slide">
-    <div class="problem-slide">
+    <div class="problem-slide" style="zoom : 1.1">
         <div class="problem-eyebrow">THE AI ENGINE</div>
         <h1 class="problem-title">Why CAT & CORE Instead of General AI?</h1>
 
@@ -3273,6 +3341,7 @@ html {
                 <th style="width:36%; color:#B9C2D6;">General AI (ChatGPT / Gemini)</th>
                 <th style="width:36%; color:#2E9C8F;">CAT &amp; CORE</th>
             </tr>
+            <
             <tr>
                 <td class="m-name">Privacy &amp; Security</td>
                 <td><span style="color:#B85C3A; font-weight:700; margin-right:0.4rem;">✗</span>External cloud processing</td>
@@ -3308,7 +3377,7 @@ html {
 </section>
 
 <section data-transition="slide">
-<div style="background:#FAF8F2; padding:3rem 3.5rem; font-family:'Inter',sans-serif; min-height:520px; display:flex; flex-direction:column; justify-content:space-between; border-radius:12px; border:0.5px solid #E6DFD0;">
+<div style="background:#FAF8F2; padding:15rem 3.5rem; font-family:'Inter',sans-serif; min-height:520px; display:flex; flex-direction:column; justify-content:space-between; border-radius:12px; border:0.5px solid #E6DFD0; ">
 
   <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:3rem;">
 
@@ -3406,10 +3475,10 @@ html {
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
 		<script>
 			Reveal.initialize({
-				width: 1920,
-				height: 1080,
+				width: 2000,
+				height: 1230,
 				margin: 0.05,
-minScale: 0.6,
+                minScale: 0.8,
 				maxScale: 1.0,
 
 				// Default transition for the presentation (overridden locally per slide above)
